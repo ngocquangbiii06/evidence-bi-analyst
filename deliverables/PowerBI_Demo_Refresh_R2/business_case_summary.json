@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0",
+  "analysis_artifact_fingerprint": "13dcf2c481102ae5f795b05291f8278ca5b9fdacf452d95aee3490ac120987d2",
+  "accepted_quantitative_results": [
+    {
+      "finding_id": "F001",
+      "claim_type": "observation",
+      "text": "Observed Revenue changed from 943363 to 1003363 VND; difference 60000 VND.",
+      "evidence_id": "EV_54d96efd486ed04913951270"
+    },
+    {
+      "finding_id": "F002",
+      "claim_type": "contribution",
+      "text": "Region=South changed by -42000 VND within this scope.",
+      "evidence_id": "EV_cd03ef9af19b7f1e0ebcbc50"
+    },
+    {
+      "finding_id": "F003",
+      "claim_type": "contribution",
+      "text": "Region=West changed by -20000 VND within this scope.",
+      "evidence_id": "EV_cd03ef9af19b7f1e0ebcbc50"
+    },
+    {
+      "finding_id": "F004",
+      "claim_type": "contribution",
+      "text": "Region=North changed by 122000 VND within this scope.",
+      "evidence_id": "EV_cd03ef9af19b7f1e0ebcbc50"
+    },
+    {
+      "finding_id": "F005",
+      "claim_type": "contribution",
+      "text": "Product=Growth changed by -15000 VND within this scope.",
+      "evidence_id": "EV_ee1a62a593fd9f0debd83f65"
+    },
+    {
+      "finding_id": "F006",
+      "claim_type": "contribution",
+      "text": "Product=Stable changed by -5000 VND within this scope.",
+      "evidence_id": "EV_ee1a62a593fd9f0debd83f65"
+    },
+    {
+      "finding_id": "F007",
+      "claim_type": "contribution",
+      "text": "Product=Anchor changed by 80000 VND within this scope.",
+      "evidence_id": "EV_ee1a62a593fd9f0debd83f65"
+    }
+  ],
+  "unknowns": [
+    "Observed changes and accounting contributions do not establish external causation."
+  ],
+  "next_investigation_step": "Collect promotion, availability, and fulfillment observations at the same Region/Product/date scope, then test any proposed driver against that evidence.",
+  "causal_claim": "not_established"
+}

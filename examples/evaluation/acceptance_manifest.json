@@ -1,0 +1,25 @@
+{
+  "manifest_version": "m3-acceptance-manifest-v1",
+  "freeze_state": "PRE_TUNING",
+  "execution_state": "NOT_RUN_OFFLINE_SPEC_ONLY",
+  "canonicalization": "SHA-256 of this JSON object after removing canonical_sha256; UTF-8, sorted keys, compact separators, non-ASCII preserved.",
+  "entries": [
+    {"path": "docs/FLAGSHIP_EXECUTION_PLAN.md", "sha256": "d176b0172ee8465155fd4eb2a4c5d96c8e5e72340704f3aa2200577871b89a67"},
+    {"path": "docs/LUNA_ASTRA_BUILD_RUNBOOK.md", "sha256": "1777ee863fc8e485b01b03a1131202021a38ceafef1d95aec782b110242d2ecc"},
+    {"path": "examples/evaluation/contracts.json", "sha256": "803a257722f70de296388e005771142e4a920daf5ffe4b9673e58cb7d759b345"},
+    {"path": "examples/evaluation/development_e03.json", "sha256": "e7c05e3cb9996591fc2b09fed48c785b9f275be6074acfd2566704b8a4fff498"},
+    {"path": "examples/evaluation/fixtures/confirmed_no_current.csv", "sha256": "f4be73130dc3a28170685839102552ecc8cba0b1a19ebd80e432f83b5dbf54c2"},
+    {"path": "examples/evaluation/fixtures/excluded_nulls.csv", "sha256": "cbe235c1a4d192ca6c7624714e86c96813cfa4ba04193e9a28f4cb2c89a9143b"},
+    {"path": "examples/evaluation/fixtures/hostile.csv", "sha256": "487cdcc5fcc1197bd880af6d69fb15da04bea31b0027ec8a3cfbc13e39312ca7"},
+    {"path": "examples/evaluation/fixtures/incomplete_coverage.csv", "sha256": "8908042b63905877b3b5130e133bd9e4f5e888a8aecfc946c89d9679ace1ebcd"},
+    {"path": "examples/evaluation/fixtures/negative_baseline.csv", "sha256": "19b207d8c145c82d56e2087a3dbb735a0989edf742ef42d1c3ff2439e75cadb9"},
+    {"path": "examples/evaluation/fixtures/offsetting.csv", "sha256": "32c41bbd1ddc90162d90010d0e94f52211fe6af91f308b5f5f4782681034d162"},
+    {"path": "examples/evaluation/fixtures/unknown_coverage.csv", "sha256": "3dca8cd0a10d8d01e667267db02f3e86b8d0a2141d41ac6b28cc408f19d2ca03"},
+    {"path": "examples/evaluation/requests.json", "sha256": "683d35befb03015760e77fe500a912d61e6054a95712000b8dc6ff1193440c33"},
+    {"path": "examples/evaluation/scenarios.json", "sha256": "f82f925e65ca492259a508ac79c6f66ce5b9bc315091b09143052fdaf9d86aa1"},
+    {"path": "examples/null_sales.csv", "sha256": "f0e004f238fb49fc14286988b530087e2a68ee7d26df4ae903a1d0cd5880a0ec"},
+    {"path": "examples/sales.csv", "sha256": "f8dbbea55291e745efe68caa2d090cf937aa4343156454ab544a753c9de74ecd"},
+    {"path": "tests/test_evaluation_scenarios.py", "sha256": "effff5e2a460feffc6d338be4868ea7a9e67b2f93da767a7e1384605285a3913"}
+  ],
+  "canonical_sha256": "1b69d5d301dd2e750f36ec11ce94c0e94b42f1d4ca1578021968ee1c9691994e"
+}

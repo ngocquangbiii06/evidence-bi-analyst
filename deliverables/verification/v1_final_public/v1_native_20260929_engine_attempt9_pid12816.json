@@ -1,0 +1,143 @@
+{
+  "public_copy_of": "deliverables/verification/dashboard_refresh_r3/v1_native_20260929_engine_attempt9_pid12816.json",
+  "source_sha256": "c9ea65fc9dbc7f4af4ab1e39000231b5c65c4fad73fe20839ae52a5374f2d76d",
+  "redaction": "local path separators normalised to '/' and drive letters replaced by <local>; content otherwise unchanged",
+  "record": {
+    "schema_version": "1.0",
+    "declared_model_fingerprint": "5176618d983f417ee254b0fda107314d69eafe9fac69e8673a5a28226e267153",
+    "model_file_sha256": "ba2a23c129a375599043d6375439824bf55218b640150be4b408343452cdc1cf",
+    "cases_sha256": "c8f3ff1bdcc454d92421fafb945d80c287348ea9f5d123ad194621ca5529cd9d",
+    "executed_at_utc": "2026-09-29T08:23:43.4425991Z",
+    "execution": "completed",
+    "reconciliation": "passed",
+    "rendering": "not_checked",
+    "cases": [
+      {
+        "id": "root",
+        "passed": true,
+        "actual": {
+          "Base": 1946726,
+          "Previous": 943363,
+          "Current": 1003363,
+          "Change": 60000,
+          "Growth": 0.0636022400708953
+        },
+        "expected": {
+          "Base": 1946726,
+          "Previous": 943363,
+          "Current": 1003363,
+          "Change": 60000,
+          "Growth": 0.0636022400708953
+        }
+      },
+      {
+        "id": "region_north",
+        "passed": true,
+        "actual": {
+          "Base": 750996,
+          "Previous": 314498,
+          "Current": 436498,
+          "Change": 122000,
+          "Growth": 0.38791979599234333
+        },
+        "expected": {
+          "Base": 750996,
+          "Previous": 314498,
+          "Current": 436498,
+          "Change": 122000,
+          "Growth": 0.38791979599234333
+        }
+      },
+      {
+        "id": "product_anchor",
+        "passed": true,
+        "actual": {
+          "Base": 719622,
+          "Previous": 319811,
+          "Current": 399811,
+          "Change": 80000,
+          "Growth": 0.2501477435110112
+        },
+        "expected": {
+          "Base": 719622,
+          "Previous": 319811,
+          "Current": 399811,
+          "Change": 80000,
+          "Growth": 0.2501477435110112
+        }
+      },
+      {
+        "id": "intersection_north_anchor",
+        "passed": true,
+        "actual": {
+          "Base": 331318,
+          "Previous": 105659,
+          "Current": 225659,
+          "Change": 120000,
+          "Growth": 1.1357290907542188
+        },
+        "expected": {
+          "Base": 331318,
+          "Previous": 105659,
+          "Current": 225659,
+          "Change": 120000,
+          "Growth": 1.1357290907542188
+        }
+      },
+      {
+        "id": "date_january",
+        "passed": true,
+        "actual": {
+          "Base": 943363,
+          "Previous": 943363,
+          "Current": 1003363,
+          "Change": 60000,
+          "Growth": 0.0636022400708953
+        },
+        "expected": {
+          "Base": 943363,
+          "Previous": 943363,
+          "Current": 1003363,
+          "Change": 60000,
+          "Growth": 0.0636022400708953
+        }
+      },
+      {
+        "id": "date_no_rows",
+        "passed": true,
+        "actual": {
+          "Base": null,
+          "Previous": 943363,
+          "Current": 1003363,
+          "Change": 60000,
+          "Growth": 0.0636022400708953
+        },
+        "expected": {
+          "Base": null,
+          "Previous": 943363,
+          "Current": 1003363,
+          "Change": 60000,
+          "Growth": 0.0636022400708953
+        }
+      },
+      {
+        "id": "no_region_rows",
+        "passed": true,
+        "actual": {
+          "Base": null,
+          "Previous": 0,
+          "Current": 0,
+          "Change": 0,
+          "Growth": null
+        },
+        "expected": {
+          "Base": null,
+          "Previous": 0,
+          "Current": 0,
+          "Change": 0,
+          "Growth": null
+        }
+      }
+    ]
+  }
+}

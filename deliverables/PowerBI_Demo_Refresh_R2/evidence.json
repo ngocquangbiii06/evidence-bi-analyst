@@ -1,0 +1,656 @@
+{
+  "schema_version": "1.0",
+  "validated_analysis_fingerprint": "13dcf2c481102ae5f795b05291f8278ca5b9fdacf452d95aee3490ac120987d2",
+  "sufficiency_status": "completed",
+  "dataset_hash": "4c1f0c6a571ff30da5ab4e0bf97f8f167b26c21cfa4300a747373d56b5b15885",
+  "contract_fingerprint": "e86bd357cc3c7b262683beae61b37a68388ec66138b5b30b8c9ff3ff697a472b",
+  "root_scope": {
+    "metric_id": "Revenue",
+    "previous": {
+      "start": "2026-01-01",
+      "end": "2026-02-01"
+    },
+    "current": {
+      "start": "2026-02-01",
+      "end": "2026-03-01"
+    },
+    "filters": {},
+    "unit": "VND",
+    "scale": 0,
+    "dimension": null
+  },
+  "limitations": [
+    "Observed changes and accounting contributions do not establish external causation."
+  ],
+  "accepted_finding_ids": [
+    "F001",
+    "F002",
+    "F003",
+    "F004",
+    "F005",
+    "F006",
+    "F007"
+  ],
+  "accepted_evidence_ids": [
+    "EV_54d96efd486ed04913951270",
+    "EV_cd03ef9af19b7f1e0ebcbc50",
+    "EV_ee1a62a593fd9f0debd83f65"
+  ],
+  "findings": [
+    {
+      "candidate": {
+        "finding_id": "F001",
+        "claim_type": "observation",
+        "evidence_id": "EV_54d96efd486ed04913951270",
+        "scope": {
+          "metric_id": "Revenue",
+          "previous": {
+            "start": "2026-01-01",
+            "end": "2026-02-01"
+          },
+          "current": {
+            "start": "2026-02-01",
+            "end": "2026-03-01"
+          },
+          "filters": {},
+          "unit": "VND",
+          "scale": 0,
+          "dimension": null
+        },
+        "text": "Observed Revenue changed from 943363 to 1003363 VND; difference 60000 VND.",
+        "field_refs": [
+          "data.previous.amount",
+          "data.current.amount",
+          "data.delta"
+        ],
+        "limitations": [
+          "PERIOD_LENGTHS_DIFFER"
+        ],
+        "previous_minor": 943363,
+        "current_minor": 1003363,
+        "delta_minor": 60000,
+        "previous": "943363",
+        "current": "1003363",
+        "delta": "60000",
+        "group_index": null,
+        "label": null,
+        "net_contribution_pct": null
+      },
+      "validation": {
+        "numerical": "passed",
+        "evidence_linkage": "passed",
+        "scope": "passed",
+        "interpretation": "passed",
+        "accepted": true,
+        "reasons": []
+      }
+    },
+    {
+      "candidate": {
+        "finding_id": "F002",
+        "claim_type": "contribution",
+        "evidence_id": "EV_cd03ef9af19b7f1e0ebcbc50",
+        "scope": {
+          "metric_id": "Revenue",
+          "previous": {
+            "start": "2026-01-01",
+            "end": "2026-02-01"
+          },
+          "current": {
+            "start": "2026-02-01",
+            "end": "2026-03-01"
+          },
+          "filters": {},
+          "unit": "VND",
+          "scale": 0,
+          "dimension": "Region"
+        },
+        "text": "Region=South changed by -42000 VND within this scope.",
+        "field_refs": [
+          "data.groups.0.delta",
+          "data.groups.0.net_contribution_pct"
+        ],
+        "limitations": [
+          "PERIOD_LENGTHS_DIFFER"
+        ],
+        "previous_minor": 316995,
+        "current_minor": 274995,
+        "delta_minor": -42000,
+        "previous": "316995",
+        "current": "274995",
+        "delta": "-42000",
+        "group_index": 0,
+        "label": "South",
+        "net_contribution_pct": "-70"
+      },
+      "validation": {
+        "numerical": "passed",
+        "evidence_linkage": "passed",
+        "scope": "passed",
+        "interpretation": "passed",
+        "accepted": true,
+        "reasons": []
+      }
+    },
+    {
+      "candidate": {
+        "finding_id": "F003",
+        "claim_type": "contribution",
+        "evidence_id": "EV_cd03ef9af19b7f1e0ebcbc50",
+        "scope": {
+          "metric_id": "Revenue",
+          "previous": {
+            "start": "2026-01-01",
+            "end": "2026-02-01"
+          },
+          "current": {
+            "start": "2026-02-01",
+            "end": "2026-03-01"
+          },
+          "filters": {},
+          "unit": "VND",
+          "scale": 0,
+          "dimension": "Region"
+        },
+        "text": "Region=West changed by -20000 VND within this scope.",
+        "field_refs": [
+          "data.groups.1.delta",
+          "data.groups.1.net_contribution_pct"
+        ],
+        "limitations": [
+          "PERIOD_LENGTHS_DIFFER"
+        ],
+        "previous_minor": 311870,
+        "current_minor": 291870,
+        "delta_minor": -20000,
+        "previous": "311870",
+        "current": "291870",
+        "delta": "-20000",
+        "group_index": 1,
+        "label": "West",
+        "net_contribution_pct": "-33.33333333333333333333333333333333333333"
+      },
+      "validation": {
+        "numerical": "passed",
+        "evidence_linkage": "passed",
+        "scope": "passed",
+        "interpretation": "passed",
+        "accepted": true,
+        "reasons": []
+      }
+    },
+    {
+      "candidate": {
+        "finding_id": "F004",
+        "claim_type": "contribution",
+        "evidence_id": "EV_cd03ef9af19b7f1e0ebcbc50",
+        "scope": {
+          "metric_id": "Revenue",
+          "previous": {
+            "start": "2026-01-01",
+            "end": "2026-02-01"
+          },
+          "current": {
+            "start": "2026-02-01",
+            "end": "2026-03-01"
+          },
+          "filters": {},
+          "unit": "VND",
+          "scale": 0,
+          "dimension": "Region"
+        },
+        "text": "Region=North changed by 122000 VND within this scope.",
+        "field_refs": [
+          "data.groups.2.delta",
+          "data.groups.2.net_contribution_pct"
+        ],
+        "limitations": [
+          "PERIOD_LENGTHS_DIFFER"
+        ],
+        "previous_minor": 314498,
+        "current_minor": 436498,
+        "delta_minor": 122000,
+        "previous": "314498",
+        "current": "436498",
+        "delta": "122000",
+        "group_index": 2,
+        "label": "North",
+        "net_contribution_pct": "203.3333333333333333333333333333333333333"
+      },
+      "validation": {
+        "numerical": "passed",
+        "evidence_linkage": "passed",
+        "scope": "passed",
+        "interpretation": "passed",
+        "accepted": true,
+        "reasons": []
+      }
+    },
+    {
+      "candidate": {
+        "finding_id": "F005",
+        "claim_type": "contribution",
+        "evidence_id": "EV_ee1a62a593fd9f0debd83f65",
+        "scope": {
+          "metric_id": "Revenue",
+          "previous": {
+            "start": "2026-01-01",
+            "end": "2026-02-01"
+          },
+          "current": {
+            "start": "2026-02-01",
+            "end": "2026-03-01"
+          },
+          "filters": {},
+          "unit": "VND",
+          "scale": 0,
+          "dimension": "Product"
+        },
+        "text": "Product=Growth changed by -15000 VND within this scope.",
+        "field_refs": [
+          "data.groups.0.delta",
+          "data.groups.0.net_contribution_pct"
+        ],
+        "limitations": [
+          "PERIOD_LENGTHS_DIFFER"
+        ],
+        "previous_minor": 311404,
+        "current_minor": 296404,
+        "delta_minor": -15000,
+        "previous": "311404",
+        "current": "296404",
+        "delta": "-15000",
+        "group_index": 0,
+        "label": "Growth",
+        "net_contribution_pct": "-25"
+      },
+      "validation": {
+        "numerical": "passed",
+        "evidence_linkage": "passed",
+        "scope": "passed",
+        "interpretation": "passed",
+        "accepted": true,
+        "reasons": []
+      }
+    },
+    {
+      "candidate": {
+        "finding_id": "F006",
+        "claim_type": "contribution",
+        "evidence_id": "EV_ee1a62a593fd9f0debd83f65",
+        "scope": {
+          "metric_id": "Revenue",
+          "previous": {
+            "start": "2026-01-01",
+            "end": "2026-02-01"
+          },
+          "current": {
+            "start": "2026-02-01",
+            "end": "2026-03-01"
+          },
+          "filters": {},
+          "unit": "VND",
+          "scale": 0,
+          "dimension": "Product"
+        },
+        "text": "Product=Stable changed by -5000 VND within this scope.",
+        "field_refs": [
+          "data.groups.1.delta",
+          "data.groups.1.net_contribution_pct"
+        ],
+        "limitations": [
+          "PERIOD_LENGTHS_DIFFER"
+        ],
+        "previous_minor": 312148,
+        "current_minor": 307148,
+        "delta_minor": -5000,
+        "previous": "312148",
+        "current": "307148",
+        "delta": "-5000",
+        "group_index": 1,
+        "label": "Stable",
+        "net_contribution_pct": "-8.333333333333333333333333333333333333333"
+      },
+      "validation": {
+        "numerical": "passed",
+        "evidence_linkage": "passed",
+        "scope": "passed",
+        "interpretation": "passed",
+        "accepted": true,
+        "reasons": []
+      }
+    },
+    {
+      "candidate": {
+        "finding_id": "F007",
+        "claim_type": "contribution",
+        "evidence_id": "EV_ee1a62a593fd9f0debd83f65",
+        "scope": {
+          "metric_id": "Revenue",
+          "previous": {
+            "start": "2026-01-01",
+            "end": "2026-02-01"
+          },
+          "current": {
+            "start": "2026-02-01",
+            "end": "2026-03-01"
+          },
+          "filters": {},
+          "unit": "VND",
+          "scale": 0,
+          "dimension": "Product"
+        },
+        "text": "Product=Anchor changed by 80000 VND within this scope.",
+        "field_refs": [
+          "data.groups.2.delta",
+          "data.groups.2.net_contribution_pct"
+        ],
+        "limitations": [
+          "PERIOD_LENGTHS_DIFFER"
+        ],
+        "previous_minor": 319811,
+        "current_minor": 399811,
+        "delta_minor": 80000,
+        "previous": "319811",
+        "current": "399811",
+        "delta": "80000",
+        "group_index": 2,
+        "label": "Anchor",
+        "net_contribution_pct": "133.3333333333333333333333333333333333333"
+      },
+      "validation": {
+        "numerical": "passed",
+        "evidence_linkage": "passed",
+        "scope": "passed",
+        "interpretation": "passed",
+        "accepted": true,
+        "reasons": []
+      }
+    }
+  ],
+  "evidence_registry": {
+    "EV_54d96efd486ed04913951270": {
+      "contract_fingerprint": "e86bd357cc3c7b262683beae61b37a68388ec66138b5b30b8c9ff3ff697a472b",
+      "data": {
+        "current": {
+          "amount": "1003363",
+          "amount_minor": 1003363,
+          "coverage_confirmed": true,
+          "excluded_null_count": 0,
+          "row_count": 9,
+          "status": "observed",
+          "valid_count": 9
+        },
+        "delta": "60000",
+        "delta_minor": 60000,
+        "growth_null_reason": null,
+        "growth_pct": "6.360224007089529693235795764726833679082",
+        "previous": {
+          "amount": "943363",
+          "amount_minor": 943363,
+          "coverage_confirmed": true,
+          "excluded_null_count": 0,
+          "row_count": 9,
+          "status": "observed",
+          "valid_count": 9
+        }
+      },
+      "dataset_hash": "4c1f0c6a571ff30da5ab4e0bf97f8f167b26c21cfa4300a747373d56b5b15885",
+      "evidence_id": "EV_54d96efd486ed04913951270",
+      "schema_version": "1.0",
+      "scope": {
+        "current": {
+          "end": "2026-03-01",
+          "start": "2026-02-01"
+        },
+        "filters": {},
+        "metric_id": "Revenue",
+        "previous": {
+          "end": "2026-02-01",
+          "start": "2026-01-01"
+        },
+        "scale": 0,
+        "unit": "VND"
+      },
+      "tool": "compare_periods",
+      "tool_version": "1.0",
+      "warnings": [
+        "PERIOD_LENGTHS_DIFFER"
+      ]
+    },
+    "EV_cd03ef9af19b7f1e0ebcbc50": {
+      "contract_fingerprint": "e86bd357cc3c7b262683beae61b37a68388ec66138b5b30b8c9ff3ff697a472b",
+      "data": {
+        "contribution_null_reason": null,
+        "groups": [
+          {
+            "current": "274995",
+            "current_coverage_confirmed": true,
+            "current_excluded_null_count": 0,
+            "current_minor": 274995,
+            "current_rows": 3,
+            "current_status": "observed",
+            "current_valid_count": 3,
+            "delta": "-42000",
+            "delta_minor": -42000,
+            "label": "South",
+            "net_contribution_pct": "-70",
+            "previous": "316995",
+            "previous_coverage_confirmed": true,
+            "previous_excluded_null_count": 0,
+            "previous_minor": 316995,
+            "previous_rows": 3,
+            "previous_status": "observed",
+            "previous_valid_count": 3
+          },
+          {
+            "current": "291870",
+            "current_coverage_confirmed": true,
+            "current_excluded_null_count": 0,
+            "current_minor": 291870,
+            "current_rows": 3,
+            "current_status": "observed",
+            "current_valid_count": 3,
+            "delta": "-20000",
+            "delta_minor": -20000,
+            "label": "West",
+            "net_contribution_pct": "-33.33333333333333333333333333333333333333",
+            "previous": "311870",
+            "previous_coverage_confirmed": true,
+            "previous_excluded_null_count": 0,
+            "previous_minor": 311870,
+            "previous_rows": 3,
+            "previous_status": "observed",
+            "previous_valid_count": 3
+          },
+          {
+            "current": "436498",
+            "current_coverage_confirmed": true,
+            "current_excluded_null_count": 0,
+            "current_minor": 436498,
+            "current_rows": 3,
+            "current_status": "observed",
+            "current_valid_count": 3,
+            "delta": "122000",
+            "delta_minor": 122000,
+            "label": "North",
+            "net_contribution_pct": "203.3333333333333333333333333333333333333",
+            "previous": "314498",
+            "previous_coverage_confirmed": true,
+            "previous_excluded_null_count": 0,
+            "previous_minor": 314498,
+            "previous_rows": 3,
+            "previous_status": "observed",
+            "previous_valid_count": 3
+          }
+        ],
+        "net_contribution_definition": "100 * segment_delta / overall_delta",
+        "numerical_validation": "passed",
+        "overall": {
+          "current": {
+            "amount": "1003363",
+            "amount_minor": 1003363,
+            "coverage_confirmed": true,
+            "excluded_null_count": 0,
+            "row_count": 9,
+            "status": "observed",
+            "valid_count": 9
+          },
+          "delta": "60000",
+          "delta_minor": 60000,
+          "growth_null_reason": null,
+          "growth_pct": "6.360224007089529693235795764726833679082",
+          "previous": {
+            "amount": "943363",
+            "amount_minor": 943363,
+            "coverage_confirmed": true,
+            "excluded_null_count": 0,
+            "row_count": 9,
+            "status": "observed",
+            "valid_count": 9
+          }
+        }
+      },
+      "dataset_hash": "4c1f0c6a571ff30da5ab4e0bf97f8f167b26c21cfa4300a747373d56b5b15885",
+      "evidence_id": "EV_cd03ef9af19b7f1e0ebcbc50",
+      "schema_version": "1.0",
+      "scope": {
+        "current": {
+          "end": "2026-03-01",
+          "start": "2026-02-01"
+        },
+        "dimension": "Region",
+        "filters": {},
+        "metric_id": "Revenue",
+        "previous": {
+          "end": "2026-02-01",
+          "start": "2026-01-01"
+        },
+        "scale": 0,
+        "unit": "VND"
+      },
+      "tool": "breakdown_change",
+      "tool_version": "1.0",
+      "warnings": [
+        "PERIOD_LENGTHS_DIFFER"
+      ]
+    },
+    "EV_ee1a62a593fd9f0debd83f65": {
+      "contract_fingerprint": "e86bd357cc3c7b262683beae61b37a68388ec66138b5b30b8c9ff3ff697a472b",
+      "data": {
+        "contribution_null_reason": null,
+        "groups": [
+          {
+            "current": "296404",
+            "current_coverage_confirmed": true,
+            "current_excluded_null_count": 0,
+            "current_minor": 296404,
+            "current_rows": 3,
+            "current_status": "observed",
+            "current_valid_count": 3,
+            "delta": "-15000",
+            "delta_minor": -15000,
+            "label": "Growth",
+            "net_contribution_pct": "-25",
+            "previous": "311404",
+            "previous_coverage_confirmed": true,
+            "previous_excluded_null_count": 0,
+            "previous_minor": 311404,
+            "previous_rows": 3,
+            "previous_status": "observed",
+            "previous_valid_count": 3
+          },
+          {
+            "current": "307148",
+            "current_coverage_confirmed": true,
+            "current_excluded_null_count": 0,
+            "current_minor": 307148,
+            "current_rows": 3,
+            "current_status": "observed",
+            "current_valid_count": 3,
+            "delta": "-5000",
+            "delta_minor": -5000,
+            "label": "Stable",
+            "net_contribution_pct": "-8.333333333333333333333333333333333333333",
+            "previous": "312148",
+            "previous_coverage_confirmed": true,
+            "previous_excluded_null_count": 0,
+            "previous_minor": 312148,
+            "previous_rows": 3,
+            "previous_status": "observed",
+            "previous_valid_count": 3
+          },
+          {
+            "current": "399811",
+            "current_coverage_confirmed": true,
+            "current_excluded_null_count": 0,
+            "current_minor": 399811,
+            "current_rows": 3,
+            "current_status": "observed",
+            "current_valid_count": 3,
+            "delta": "80000",
+            "delta_minor": 80000,
+            "label": "Anchor",
+            "net_contribution_pct": "133.3333333333333333333333333333333333333",
+            "previous": "319811",
+            "previous_coverage_confirmed": true,
+            "previous_excluded_null_count": 0,
+            "previous_minor": 319811,
+            "previous_rows": 3,
+            "previous_status": "observed",
+            "previous_valid_count": 3
+          }
+        ],
+        "net_contribution_definition": "100 * segment_delta / overall_delta",
+        "numerical_validation": "passed",
+        "overall": {
+          "current": {
+            "amount": "1003363",
+            "amount_minor": 1003363,
+            "coverage_confirmed": true,
+            "excluded_null_count": 0,
+            "row_count": 9,
+            "status": "observed",
+            "valid_count": 9
+          },
+          "delta": "60000",
+          "delta_minor": 60000,
+          "growth_null_reason": null,
+          "growth_pct": "6.360224007089529693235795764726833679082",
+          "previous": {
+            "amount": "943363",
+            "amount_minor": 943363,
+            "coverage_confirmed": true,
+            "excluded_null_count": 0,
+            "row_count": 9,
+            "status": "observed",
+            "valid_count": 9
+          }
+        }
+      },
+      "dataset_hash": "4c1f0c6a571ff30da5ab4e0bf97f8f167b26c21cfa4300a747373d56b5b15885",
+      "evidence_id": "EV_ee1a62a593fd9f0debd83f65",
+      "schema_version": "1.0",
+      "scope": {
+        "current": {
+          "end": "2026-03-01",
+          "start": "2026-02-01"
+        },
+        "dimension": "Product",
+        "filters": {},
+        "metric_id": "Revenue",
+        "previous": {
+          "end": "2026-02-01",
+          "start": "2026-01-01"
+        },
+        "scale": 0,
+        "unit": "VND"
+      },
+      "tool": "breakdown_change",
+      "tool_version": "1.0",
+      "warnings": [
+        "PERIOD_LENGTHS_DIFFER"
+      ]
+    }
+  }
+}

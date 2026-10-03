@@ -1,0 +1,28 @@
+{
+  "task": "V1-C04",
+  "check": "open the packaged R19 PBIP (no .pbi cache) in Power BI Desktop, Refresh, verify",
+  "recorded_on": "2026-09-29",
+  "writer": "Claude coordinator session (D25/D28), observation via screen automation",
+  "source": "R19 folder extracted from the first V1 final build; its R19 files are byte-identical to the final package and to the natively checked copy with .pbi excluded — full per-file hashes, tree algorithm and comparison in v1_final_c04_r19_identity.json (report tree 143102730ed87eb69559eae1b813239370c4d3a397b8bd75f4e32ce42f028b71, model tree d6fb8a7dae71a9c424df45d05f02840c675efd8038c4efa6530fbd74538b9155)",
+  "desktop": {"version": "2.157.1354.0", "desktop_pid": 15340, "engine_pid": 8028, "engine_parent_pid": 15340, "port": 56100, "command_line_is_packaged_pbip": true},
+  "observed": [
+    "On open without cache: visuals empty (KPIs 0), banners 'One or more relationships have been modified and need to be refreshed manually' and 'Some of the tables have incomplete or no data' with 'Refresh now'.",
+    "After two 'Refresh now' clicks: banners cleared; page 1 KPIs 943,363 / 1,003,363 / +60,000 / +6.36%; Region +122,000/-42,000/-20,000 and Product +80,000/-15,000/-5,000 with negative bars red and positive teal; monthly 943,363 / 1,003,363.",
+    "Click North: North highlighted, Product breakdown, KPIs, monthly and narrative unchanged at root; reset to root.",
+    "Page 2: findings table and scope table render; no Dataset / Root analysis scope / Validated analysis fingerprint rows.",
+    "Closed with 'Don't save'; nothing written back to the workspace artifact."
+  ],
+  "engine_verification": {
+    "tool": "scripts/verify_powerbi.ps1 (read-only)",
+    "reference_model_file_sha256": "ba2a23c129a375599043d6375439824bf55218b640150be4b408343452cdc1cf",
+    "cases_sha256": "c8f3ff1bdcc454d92421fafb945d80c287348ea9f5d123ad194621ca5529cd9d",
+    "exit_code": 0,
+    "result": "execution completed, reconciliation passed, 7/7 cases (35 values)",
+    "internal_report_sha256": "da7644673d745158e600d0a27098205e2222a7d087fc89e9c5979bae52f1e60b"
+  },
+  "media": {
+    "deliverables/verification/dashboard_refresh_r3/media_r19_20260929/r19_package_after_refresh_page1.jpg": "a819c27effd6f692581966136b14d24bf0a035b284295c4a8de0df8c53dafc5a",
+    "deliverables/verification/dashboard_refresh_r3/media_r19_20260929/r19_package_after_refresh_page2.jpg": "aff30c5562ceff56b0b34daa8008e4782e260177bc179ec9d23ffe2efdf761e4"
+  },
+  "note": "This closes the earlier 'native check on cached data, full Refresh not performed' limitation for the packaged artifact."
+}

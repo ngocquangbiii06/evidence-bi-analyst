@@ -1,0 +1,12 @@
+relationship rel_Region
+	fromColumn: FactSales.RegionKey
+	toColumn: DimRegion.RegionKey
+
+relationship rel_Product
+	fromColumn: FactSales.ProductKey
+	toColumn: DimProduct.ProductKey
+
+relationship rel_Date
+	fromColumn: FactSales.Date
+	toColumn: DimDate.Date
+

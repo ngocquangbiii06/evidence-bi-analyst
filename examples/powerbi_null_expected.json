@@ -1,0 +1,10 @@
+{
+  "source":"Manually calculated from null_sales.csv. Revenue null_policy=exclude; coverage Jan+Feb confirmed.",
+  "metric_tolerance":0,
+  "growth_ratio_tolerance":1e-12,
+  "cases":[
+    {"id":"overall_all_null_current","filter":"","expected":{"Base":10,"Previous":10,"Current":null,"Change":null,"Growth":null}},
+    {"id":"no_north_rows_current","filter":"TREATAS({\"North\"}, 'DimRegion'[Region])","expected":{"Base":10,"Previous":10,"Current":0,"Change":-10,"Growth":-1}},
+    {"id":"south_all_null_both_periods","filter":"TREATAS({\"South\"}, 'DimRegion'[Region])","expected":{"Base":null,"Previous":null,"Current":null,"Change":null,"Growth":null}}
+  ]
+}

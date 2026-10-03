@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "contract_id": "synthetic-sales",
+  "revision": 1,
+  "confirmed": true,
+  "grain_description": "One synthetic sales line; Revenue is net line revenue in VND.",
+  "row_key_columns": [
+    "LineID"
+  ],
+  "duplicate_policy": "reject",
+  "date_column": "OrderDate",
+  "date_format": "%Y-%m-%d",
+  "metrics": [
+    {
+      "id": "Revenue",
+      "column": "Revenue",
+      "type": "additive",
+      "unit": "VND",
+      "scale": 0,
+      "null_policy": "exclude"
+    }
+  ],
+  "dimensions": {
+    "Region": "Region",
+    "Product": "Product"
+  },
+  "coverage": {
+    "start": "2026-01-01",
+    "end": "2026-03-01"
+  },
+  "coverage_confirmed": true
+}

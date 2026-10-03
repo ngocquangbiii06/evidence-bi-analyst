@@ -1,0 +1,3 @@
+LineID,OrderID,OrderDate,CustomerID,Region,Product,Revenue
+Z001,OZ001,2026-01-05,C001,North,A,-20
+Z002,OZ002,2026-02-05,C001,North,A,-10

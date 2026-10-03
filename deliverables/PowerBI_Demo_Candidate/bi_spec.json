@@ -1,0 +1,200 @@
+{
+  "schema_version": "1.0",
+  "method": "deterministic_verified_templates",
+  "dataset_hash": "4c1f0c6a571ff30da5ab4e0bf97f8f167b26c21cfa4300a747373d56b5b15885",
+  "contract_fingerprint": "e86bd357cc3c7b262683beae61b37a68388ec66138b5b30b8c9ff3ff697a472b",
+  "request": {
+    "question": "How did revenue change between January and February, and which region and product movements offset each other?",
+    "metric_id": "Revenue",
+    "previous": {
+      "start": "2026-01-01",
+      "end": "2026-02-01"
+    },
+    "current": {
+      "start": "2026-02-01",
+      "end": "2026-03-01"
+    },
+    "dimensions": [
+      "Region",
+      "Product"
+    ],
+    "filters": {}
+  },
+  "analysis_artifact": {
+    "fingerprint": "064083cb867540219476ebbf428e6cada6a4d7e3aaf7633388d92feace4668d6",
+    "sufficiency_status": "completed",
+    "root_scope": {
+      "metric_id": "Revenue",
+      "previous": {
+        "start": "2026-01-01",
+        "end": "2026-02-01"
+      },
+      "current": {
+        "start": "2026-02-01",
+        "end": "2026-03-01"
+      },
+      "filters": {},
+      "unit": "VND",
+      "scale": 0,
+      "dimension": null
+    },
+    "accepted_finding_ids": [
+      "F001",
+      "F002",
+      "F003",
+      "F004",
+      "F005",
+      "F006",
+      "F007"
+    ],
+    "accepted_evidence_ids": [
+      "EV_54d96efd486ed04913951270",
+      "EV_cd03ef9af19b7f1e0ebcbc50",
+      "EV_ee1a62a593fd9f0debd83f65"
+    ],
+    "limitations": [
+      "Observed changes and accounting contributions do not establish external causation."
+    ]
+  },
+  "exported_rows": 18,
+  "kpis": [
+    {
+      "name": "Revenue",
+      "dax": "SUM('FactSales'[RevenueMinor])",
+      "validation": {
+        "references": "passed",
+        "syntax": "not_checked",
+        "execution": "not_checked",
+        "reconciliation": "not_checked"
+      }
+    },
+    {
+      "name": "Revenue Previous Period",
+      "dax": "VAR PeriodRows = CALCULATE(COUNTROWS('FactSales'), REMOVEFILTERS('DimDate'), FILTER(ALL('DimDate'), 'DimDate'[Date] >= DATE(2026, 1, 1) && 'DimDate'[Date] < DATE(2026, 2, 1)))\nVAR Amount = CALCULATE([Revenue], REMOVEFILTERS('DimDate'), FILTER(ALL('DimDate'), 'DimDate'[Date] >= DATE(2026, 1, 1) && 'DimDate'[Date] < DATE(2026, 2, 1)))\nRETURN IF(COALESCE(PeriodRows, 0) = 0, 0, Amount)",
+      "validation": {
+        "references": "passed",
+        "syntax": "not_checked",
+        "execution": "not_checked",
+        "reconciliation": "not_checked"
+      }
+    },
+    {
+      "name": "Revenue Current Period",
+      "dax": "VAR PeriodRows = CALCULATE(COUNTROWS('FactSales'), REMOVEFILTERS('DimDate'), FILTER(ALL('DimDate'), 'DimDate'[Date] >= DATE(2026, 2, 1) && 'DimDate'[Date] < DATE(2026, 3, 1)))\nVAR Amount = CALCULATE([Revenue], REMOVEFILTERS('DimDate'), FILTER(ALL('DimDate'), 'DimDate'[Date] >= DATE(2026, 2, 1) && 'DimDate'[Date] < DATE(2026, 3, 1)))\nRETURN IF(COALESCE(PeriodRows, 0) = 0, 0, Amount)",
+      "validation": {
+        "references": "passed",
+        "syntax": "not_checked",
+        "execution": "not_checked",
+        "reconciliation": "not_checked"
+      }
+    },
+    {
+      "name": "Revenue Change",
+      "dax": "VAR Previous = [Revenue Previous Period]\nVAR CurrentAmount = [Revenue Current Period]\nRETURN IF(ISBLANK(Previous) || ISBLANK(CurrentAmount), BLANK(), CurrentAmount - Previous)",
+      "validation": {
+        "references": "passed",
+        "syntax": "not_checked",
+        "execution": "not_checked",
+        "reconciliation": "not_checked"
+      }
+    },
+    {
+      "name": "Revenue Growth %",
+      "dax": "VAR Previous = [Revenue Previous Period]\nRETURN IF(Previous > 0, DIVIDE([Revenue Change], Previous), BLANK())",
+      "validation": {
+        "references": "passed",
+        "syntax": "not_checked",
+        "execution": "not_checked",
+        "reconciliation": "not_checked"
+      }
+    }
+  ],
+  "model": {
+    "grain": "One synthetic sales line; Revenue is net line revenue in VND.",
+    "tables": [
+      {
+        "name": "FactSales",
+        "columns": [
+          "LineID",
+          "Date",
+          "RegionKey",
+          "ProductKey",
+          "RevenueMinor"
+        ]
+      },
+      {
+        "name": "DimRegion",
+        "columns": [
+          "RegionKey",
+          "Region"
+        ]
+      },
+      {
+        "name": "DimProduct",
+        "columns": [
+          "ProductKey",
+          "Product"
+        ]
+      },
+      {
+        "name": "DimDate",
+        "columns": [
+          "Date",
+          "Year",
+          "Month",
+          "MonthKey"
+        ]
+      },
+      {
+        "name": "Evidence",
+        "columns": [
+          "FindingID",
+          "ClaimType",
+          "Finding",
+          "EvidenceID",
+          "ScopeJSON",
+          "ValidationJSON",
+          "Status"
+        ]
+      },
+      {
+        "name": "AnalysisInfo",
+        "columns": [
+          "Property",
+          "Value"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "rel_Region",
+        "fromTable": "FactSales",
+        "fromColumn": "RegionKey",
+        "toTable": "DimRegion",
+        "toColumn": "RegionKey",
+        "crossFilteringBehavior": "oneDirection"
+      },
+      {
+        "name": "rel_Product",
+        "fromTable": "FactSales",
+        "fromColumn": "ProductKey",
+        "toTable": "DimProduct",
+        "toColumn": "ProductKey",
+        "crossFilteringBehavior": "oneDirection"
+      },
+      {
+        "name": "rel_Date",
+        "fromTable": "FactSales",
+        "fromColumn": "Date",
+        "toTable": "DimDate",
+        "toColumn": "Date",
+        "crossFilteringBehavior": "oneDirection"
+      }
+    ]
+  },
+  "limitations": [
+    "DAX must be executed in Power BI before execution/reconciliation can be marked passed.",
+    "LLM-selected report layout is excluded; the flagship uses fixed deterministic visuals.",
+    "Analysis: Observed changes and accounting contributions do not establish external causation."
+  ]
+}

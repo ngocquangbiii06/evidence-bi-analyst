@@ -1,0 +1,205 @@
+{
+    "public_copy_of":  "deliverables/verification/dashboard_refresh_r3/v1_native_20260929_attempt9_r19_native.json",
+    "source_sha256":  "b61ac47e091443ca8145028b55645600ce200376fe15609fc7b3e2f101ed178a",
+    "redaction":  "local path separators normalised to \u0027/\u0027 and drive letters replaced by \u003clocal\u003e; content otherwise unchanged",
+    "record":  {
+                   "task":  "V1-C02",
+                   "status":  "tested",
+                   "revision":  "attempt 9, rev 2 (after claude_task_review REQUEST_CHANGES: documentation gaps filled, extra observations captured)",
+                   "recorded_on":  "2026-09-29",
+                   "repair_round":  "1/2 (unchanged; no code change in this attempt)",
+                   "supersedes_deferral":  "v1_native_20260928_attempt8_user_deferral.json — Computer use became available and the deferred native check was completed; deferral D27 lifted",
+                   "writer":  {
+                                  "session":  "Claude desktop app, Code tab (coordinator, D25/D28)",
+                                  "host_model":  "claude-opus-5-5",
+                                  "evidence_kind":  "observed via Computer use (screenshots/zooms) + engine verifier"
+                              },
+                   "candidate":  {
+                                     "pbip":  "deliverables/PowerBI_Demo_Refresh_R19_allcorrect_scopeinvert_tmdl/EvidenceBI.pbip",
+                                     "pbip_pointer_sha256":  "7d4bd5268f1ae1418465e46a6b7a48e816e9c555972e44eee0402256a66e8844",
+                                     "report_tree_sha256":  "51dcf2ea790ed5370aec793bf7e06741b8b434203149853e3fe36c20ecdbbb91",
+                                     "model_tree_sha256":  "37d04a42658db5df8f9d3aaba7361eb75c5de76412e191695d3a69adf5301e07",
+                                     "model_tree_note":  "37d04a... is the staged exact-R3 TMDL tree recorded in attempt 6, not the repo folder deliverables/PowerBI_Demo_Refresh_R3 (tree 663a7d..., different lineageTags, no cache.abf). Recomputed by the reviewer after this session: unchanged, so Desktop did not save over it.",
+                                     "composition":  "native candidate = visual.json files byte-identical to the static build R19_scopeinvert + the staged R3 TMDL model; the two page.json files differ only in formatting, visualInteractions identical (reviewer check)",
+                                     "dataset_sha256":  "4c1f0c6a571ff30da5ab4e0bf97f8f167b26c21cfa4300a747373d56b5b15885",
+                                     "source_hashes":  {
+                                                           "src/bi_analyst/bi.py":  "25f298bcffd9f20aaccd9c26630055f1688920617d57939422e455ca710a4145",
+                                                           "tests/test_powerbi.py":  "56cc57c2af3f8ab3ae2a92593c679e5044671b693d08a5bad495f2d95b311895",
+                                                           "scripts/validate_powerbi.py":  "e60ba3a34d080481006023094885d1104a0c1116abafa8714e26a99163b5edd6",
+                                                           "scripts/verify_powerbi.ps1":  "bd70f78e97d7b03434d666519af7a8ae2ce7e1f042812b0fc8cb4d98ec0edc32"
+                                                       }
+                                 },
+                   "native_binding":  {
+                                          "desktop_version":  "2.157.1354.0",
+                                          "desktop_pid":  12816,
+                                          "desktop_command_line_contains_exact_pbip":  true,
+                                          "engine_pid":  2676,
+                                          "engine_parent_pid":  12816,
+                                          "engine_port":  52591,
+                                          "port_listener_owner_matches_engine":  true,
+                                          "desktop_engine_pairs_running":  1,
+                                          "opened_via":  "Start-Process on the exact PBIP (file association); all observation via Computer use, no shell UI input"
+                                      },
+                   "refresh":  {
+                                   "check_state":  "not_checked",
+                                   "reason":  "Project opened with its saved cached data; no Full Refresh, warning review or measure-ready check was performed. Per card step 2 the values were instead verified against the oracle through the live engine on this exact session (below); structure compared to the reference model.bim."
+                               },
+                   "engine_verification":  {
+                                               "command":  "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/verify_powerbi.ps1 -Project %TEMP%/pbi_v1_c02_r19_verify_20260929/deliverables/PowerBI_Demo_Refresh_R3 -Port 52591 -Cases \u003cabs\u003e/deliverables/PowerBI_Demo_Refresh_R19_allcorrect_scopeinvert_tmdl/verification_cases.json -Output \u003cabs\u003e/deliverables/verification/dashboard_refresh_r3/v1_native_20260929_engine_attempt9_pid12816.json",
+                                               "dll_source":  "Analysis Services client DLLs loaded directly from the running PBIDesktop bin directory by the verifier (no temporary DLL copy)",
+                                               "reference_project":  "%TEMP%/pbi_v1_c02_r19_verify_20260929/deliverables/PowerBI_Demo_Refresh_R3, extracted from deliverables/evidence-bi-release-r3.zip (sha 7ff95fbb...)",
+                                               "reference_model_file_sha256":  "ba2a23c129a375599043d6375439824bf55218b640150be4b408343452cdc1cf",
+                                               "cases_sha256":  "c8f3ff1bdcc454d92421fafb945d80c287348ea9f5d123ad194621ca5529cd9d",
+                                               "declared_model_fingerprint":  "5176618d983f417ee254b0fda107314d69eafe9fac69e8673a5a28226e267153",
+                                               "exit_code":  0,
+                                               "result":  "execution completed, reconciliation passed, 7/7 cases (35 values)",
+                                               "report":  "deliverables/verification/dashboard_refresh_r3/v1_native_20260929_engine_attempt9_pid12816.json",
+                                               "report_sha256":  "c9ea65fc9dbc7f4af4ab1e39000231b5c65c4fad73fe20839ae52a5374f2d76d"
+                                           },
+                   "native_checks":  {
+                                         "page1_renders":  {
+                                                               "check_state":  "passed",
+                                                               "evidence_kind":  "observed",
+                                                               "observed":  "KPIs 943,363 / 1,003,363 / +60,000 / +6.36%; Region +122,000/-42,000/-20,000; Product +80,000/-15,000/-5,000; monthly 2026-01 943,363 and 2026-02 1,003,363; verified narrative with limitation lines"
+                                                           },
+                                         "page2_renders":  {
+                                                               "check_state":  "passed",
+                                                               "evidence_kind":  "observed",
+                                                               "observed":  "accepted findings F001-F007 (F007 \u0027Product=Anchor changed by 80000 VND within this scope.\u0027 accepted, visible after scrolling the table: r19_page2_findings_scrolled_f007.jpg); scope table rows: Analysis limitation, Analysis sufficiency, Coverage, Current, Interpretation, Previous, Scope; explanatory footer only"
+                                                           },
+                                         "technical_scope_rows_hidden":  {
+                                                                             "check_state":  "passed",
+                                                                             "evidence_kind":  "observed",
+                                                                             "observed":  "Dataset, Root analysis scope and Validated analysis fingerprint absent"
+                                                                         },
+                                         "signed_bar_colors":  {
+                                                                   "check_state":  "passed",
+                                                                   "evidence_kind":  "observed",
+                                                                   "observed":  "negative bars (South, West, Growth, Stable) red; positive bars (North, Anchor) teal"
+                                                               },
+                                         "interaction_cases":  {
+                                                                   "contract":  "selected source may highlight itself; the 4 KPI cards, the other breakdown, the monthly chart and the narrative stay at root values",
+                                                                   "root_values_expected":  {
+                                                                                                "kpis":  "943,363 / 1,003,363 / +60,000 / +6.36%",
+                                                                                                "region":  "+122,000 / -42,000 / -20,000",
+                                                                                                "product":  "+80,000 / -15,000 / -5,000",
+                                                                                                "monthly":  "943,363 / 1,003,363",
+                                                                                                "narrative":  "7 verified bullets + 2 limitation lines"
+                                                                                            },
+                                                                   "cases":  [
+                                                                                 {
+                                                                                     "source":  "North",
+                                                                                     "selected":  "North +122,000 highlighted, South/West dimmed",
+                                                                                     "kpis":  "943,363 / 1,003,363 / +60,000 / +6.36%",
+                                                                                     "opposite_breakdown":  "Product +80,000 / -15,000 / -5,000 fully shown",
+                                                                                     "monthly":  "943,363 / 1,003,363",
+                                                                                     "narrative":  "unchanged",
+                                                                                     "reset":  "root",
+                                                                                     "result":  "passed",
+                                                                                     "evidence_kind":  "observed",
+                                                                                     "media":  "r19_click_region_north.jpg"
+                                                                                 },
+                                                                                 {
+                                                                                     "source":  "South",
+                                                                                     "selected":  "South -42,000 highlighted",
+                                                                                     "kpis":  "root",
+                                                                                     "opposite_breakdown":  "Product +80,000 / -15,000 / -5,000",
+                                                                                     "monthly":  "943,363 / 1,003,363",
+                                                                                     "narrative":  "unchanged",
+                                                                                     "reset":  "root",
+                                                                                     "result":  "passed",
+                                                                                     "evidence_kind":  "observed (coordinator zoom, no per-click media)"
+                                                                                 },
+                                                                                 {
+                                                                                     "source":  "West",
+                                                                                     "selected":  "West -20,000 highlighted",
+                                                                                     "kpis":  "root",
+                                                                                     "opposite_breakdown":  "Product +80,000 / -15,000 / -5,000",
+                                                                                     "monthly":  "943,363 / 1,003,363",
+                                                                                     "narrative":  "unchanged",
+                                                                                     "reset":  "root",
+                                                                                     "result":  "passed",
+                                                                                     "evidence_kind":  "observed (coordinator zoom, no per-click media)"
+                                                                                 },
+                                                                                 {
+                                                                                     "source":  "Anchor",
+                                                                                     "selected":  "Anchor +80,000 highlighted, Growth/Stable dimmed",
+                                                                                     "kpis":  "943,363 / 1,003,363 / +60,000 / +6.36%",
+                                                                                     "opposite_breakdown":  "Region +122,000 / -42,000 / -20,000 fully shown",
+                                                                                     "monthly":  "943,363 / 1,003,363",
+                                                                                     "narrative":  "unchanged",
+                                                                                     "reset":  "root",
+                                                                                     "result":  "passed",
+                                                                                     "evidence_kind":  "observed",
+                                                                                     "media":  "r19_click_product_anchor.jpg"
+                                                                                 },
+                                                                                 {
+                                                                                     "source":  "Growth",
+                                                                                     "selected":  "Growth -15,000 highlighted",
+                                                                                     "kpis":  "root",
+                                                                                     "opposite_breakdown":  "Region +122,000 / -42,000 / -20,000",
+                                                                                     "monthly":  "943,363 / 1,003,363",
+                                                                                     "narrative":  "unchanged",
+                                                                                     "reset":  "root",
+                                                                                     "result":  "passed",
+                                                                                     "evidence_kind":  "observed (coordinator zoom, no per-click media)"
+                                                                                 },
+                                                                                 {
+                                                                                     "source":  "Stable",
+                                                                                     "selected":  "Stable -5,000 highlighted (first click missed the short bar; retried on the bar)",
+                                                                                     "kpis":  "root",
+                                                                                     "opposite_breakdown":  "Region +122,000 / -42,000 / -20,000",
+                                                                                     "monthly":  "943,363 / 1,003,363",
+                                                                                     "narrative":  "unchanged",
+                                                                                     "reset":  "root",
+                                                                                     "result":  "passed",
+                                                                                     "evidence_kind":  "observed (coordinator zoom, no per-click media)"
+                                                                                 },
+                                                                                 {
+                                                                                     "source":  "Jan",
+                                                                                     "selected":  "2026-01 bar highlighted, 2026-02 dimmed",
+                                                                                     "kpis":  "root",
+                                                                                     "region_and_product":  "root values",
+                                                                                     "narrative":  "unchanged",
+                                                                                     "reset":  "root",
+                                                                                     "result":  "passed",
+                                                                                     "evidence_kind":  "observed (coordinator zoom, no per-click media)"
+                                                                                 },
+                                                                                 {
+                                                                                     "source":  "Feb",
+                                                                                     "selected":  "2026-02 bar highlighted, 2026-01 dimmed",
+                                                                                     "kpis":  "943,363 / 1,003,363 / +60,000 / +6.36%",
+                                                                                     "region_and_product":  "Region +122,000/-42,000/-20,000; Product +80,000/-15,000/-5,000",
+                                                                                     "narrative":  "unchanged",
+                                                                                     "reset":  "root",
+                                                                                     "result":  "passed",
+                                                                                     "evidence_kind":  "observed",
+                                                                                     "media":  "r19_click_month_feb.jpg"
+                                                                                 }
+                                                                             ],
+                                                                   "static_config":  "visualInteractions NoFilter for the three sources (consistent with the root-retaining contract; reviewer check)"
+                                                               },
+                                         "table_width_readability":  "R05b user deferral preserved (page 2 table widths still truncate)"
+                                     },
+                   "media":  {
+                                 "dir":  "deliverables/verification/dashboard_refresh_r3/media_r19_20260929/",
+                                 "files":  {
+                                               "r19_page1_business_overview.jpg":  "18bb746e39864bbd6e58add11ce9f63313ca719f1b9d1fd3165077a6d1b829b3",
+                                               "r19_page2_evidence_scope.jpg":  "e81b910116732b6b93cd3ddc66d5f2e352bdcfb4ce78f3ab533bd3da5c1a7932",
+                                               "r19_page2_findings_scrolled_f007.jpg":  "c30a5bb95bfab93d6bdc7c9d33ee525dff1797ebe6c95ff462abe473ca640636",
+                                               "r19_click_region_north.jpg":  "08485a5dab69d615c99e34eed7fa86bb62744dce6d9824d96818566d661ceb15",
+                                               "r19_click_product_anchor.jpg":  "ea8f81c983e43603fd506c93b54177bc1022074bf6040db9459a30bdefab6d7e",
+                                               "r19_click_month_feb.jpg":  "ae5d30b3867f5c36f5387e96924ca96c491ac89e7d8608afb6a6622f921cf432"
+                                           },
+                                 "note":  "Internal captures of Power BI Desktop (full screen or report-canvas zoom); not public-safe copies."
+                             },
+                   "tests_on_same_hashes":  "run recorded in packet v1_native_20260928_attempt7_r19_prereview.json: full pytest 408 passed, 2 skipped (JUnit file v1_c02_attempt9_full.junit.xml, sha 8761864...); Ruff passed; source hashes above unchanged since",
+                   "review":  {
+                                  "claude_task_review_1":  "REQUEST_CHANGES (P1 per-click detail, P2 F007 and hashes, P3 refresh wording/paths/binding) — addressed in this revision",
+                                  "claude_task_review_2":  "ACCEPT (opus, 2026-09-29). Remaining P3, accepted as documented limitations: 5/8 click cases have coordinator observation without per-click media; tree hashes and pid/port binding are coordinator-reported (no process log artifact); page/object count (2 pages, 13 objects) and month order 2026-01 → 2026-02 are visible in media but were not stated as claims."
+                              },
+                   "usage":  "Claude session usage telemetry unavailable (unknown); Codex not used in this attempt",
+                   "next":  "Re-review of this revision; V1-C03 fix 1 (Vietnamese causal gate) in progress; then V1-C04."
+               },
+    "public_media_note":  "All six media files listed in record.media are included in the V1 final package; each was checked: Power BI Desktop window only, \u0027Sign in\u0027 (signed out), no account, email, machine path or taskbar. The record\u0027s \u0027not public-safe copies\u0027 wording refers to the internal originals and is superseded by this check."
+}

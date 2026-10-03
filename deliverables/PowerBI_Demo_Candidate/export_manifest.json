@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0",
+  "run_id": "52cc3462310a4f1bb94b53dbdb9b334e",
+  "dataset_hash": "4c1f0c6a571ff30da5ab4e0bf97f8f167b26c21cfa4300a747373d56b5b15885",
+  "validated_analysis_fingerprint": "064083cb867540219476ebbf428e6cada6a4d7e3aaf7633388d92feace4668d6",
+  "model_fingerprint": "b062c3582b2a93ccde67fda30c6daa2b6793474c501aa66f8646b3c5ad4a211f",
+  "policy_fingerprint": "75a85e25e3462d3963bcedefb3d0fb513721274fbed1193fb80f131be03c6a98",
+  "status": "generated_not_executed",
+  "data_class": "synthetic"
+}

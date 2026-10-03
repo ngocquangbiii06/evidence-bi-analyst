@@ -1,0 +1,7 @@
+{
+  "schema_version": "1.0",
+  "policy_id": "local-synthetic",
+  "mode": "local_only",
+  "external_llm_enabled": false,
+  "dataset_class": "synthetic"
+}

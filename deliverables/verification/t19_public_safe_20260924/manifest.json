@@ -1,0 +1,22 @@
+{
+  "purpose": "Public-safe presentation copy; not a replacement for native Power BI verification evidence",
+  "captured_on": "2026-09-24",
+  "source_application": "Power BI Desktop 2.157.1354.0",
+  "source_artifact": "deliverables/PowerBI_Demo_Candidate/EvidenceBI.pbip",
+  "source_pbip_sha256_after_close_without_save": "0ae8ee9012065f3298c97df131ea1bc6c9dab66e77dca2dabbfba9d6cf916ca2",
+  "source_tree_sha256_after_close_without_save": "f5da6c14f350ce2c19a5cd371844127c6fba810a8b6ab2dd3b1e3daa69423329",
+  "method": "Opened the already verified Candidate, ran Full Refresh, exported report pages to PDF in Desktop, and closed without saving. Rendered the two PDF pages to PNG at 200 DPI.",
+  "files": {
+    "EvidenceBI_report_pages.pdf": "5b0e2ef25c5133c19f93e80823963c0ed2ef61c78ed552739c6eeab90994276c",
+    "EvidenceBI_page-1.png": "52bbc177f5c29518ff0494cdda110de619d8d0be035b9d98e156ffd69083edec",
+    "EvidenceBI_page-2.png": "8c2cb211b5db99f235e6428121f22f18bb39b8964299cd9031308e429d27a929"
+  },
+  "page_count": 2,
+  "privacy_review": "Both rendered pages were visually inspected. They contain synthetic report data and no local account name or Desktop chrome.",
+  "presentation_limits": [
+    "The Previous-period KPI caption is truncated in the source visual.",
+    "The scope table contains long values that do not fully fit its displayed column width.",
+    "The Evidence & scope page has one small table and substantial blank canvas."
+  ],
+  "claim_boundary": "These presentation images are not proof of live-agent quality, Power BI reconciliation, or release acceptance; consult the separate hash-bound native verification record."
+}

@@ -1,0 +1,87 @@
+{
+  "schema_version": "1.0",
+  "source": "Independent integer sums over the generated CSV; no Analytics/tool call.",
+  "generator_version": "t15-sales-demo-v1",
+  "seed": 20260923,
+  "metric_tolerance": 0,
+  "growth_ratio_tolerance": 1e-12,
+  "cases": [
+    {
+      "id": "root",
+      "filter": "",
+      "expected": {
+        "Base": 1946726,
+        "Previous": 943363,
+        "Current": 1003363,
+        "Change": 60000,
+        "Growth": 0.0636022400708953
+      }
+    },
+    {
+      "id": "region_north",
+      "filter": "TREATAS({\"North\"}, 'DimRegion'[Region])",
+      "expected": {
+        "Base": 750996,
+        "Previous": 314498,
+        "Current": 436498,
+        "Change": 122000,
+        "Growth": 0.38791979599234333
+      }
+    },
+    {
+      "id": "product_anchor",
+      "filter": "TREATAS({\"Anchor\"}, 'DimProduct'[Product])",
+      "expected": {
+        "Base": 719622,
+        "Previous": 319811,
+        "Current": 399811,
+        "Change": 80000,
+        "Growth": 0.2501477435110112
+      }
+    },
+    {
+      "id": "intersection_north_anchor",
+      "filter": "TREATAS({\"North\"}, 'DimRegion'[Region]), TREATAS({\"Anchor\"}, 'DimProduct'[Product])",
+      "expected": {
+        "Base": 331318,
+        "Previous": 105659,
+        "Current": 225659,
+        "Change": 120000,
+        "Growth": 1.1357290907542188
+      }
+    },
+    {
+      "id": "date_january",
+      "filter": "TREATAS({DATE(2026, 1, 15)}, 'DimDate'[Date])",
+      "expected": {
+        "Base": 943363,
+        "Previous": 943363,
+        "Current": 1003363,
+        "Change": 60000,
+        "Growth": 0.0636022400708953
+      }
+    },
+    {
+      "id": "date_no_rows",
+      "filter": "TREATAS({DATE(2026, 3, 15)}, 'DimDate'[Date])",
+      "expected": {
+        "Base": null,
+        "Previous": 943363,
+        "Current": 1003363,
+        "Change": 60000,
+        "Growth": 0.0636022400708953
+      }
+    },
+    {
+      "id": "no_region_rows",
+      "filter": "TREATAS({\"Atlantis\"}, 'DimRegion'[Region])",
+      "expected": {
+        "Base": null,
+        "Previous": 0,
+        "Current": 0,
+        "Change": 0,
+        "Growth": null
+      }
+    }
+  ]
+}

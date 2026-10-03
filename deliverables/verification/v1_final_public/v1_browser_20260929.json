@@ -1,0 +1,112 @@
+{
+  "public_copy_of": "deliverables/verification/dashboard_refresh_r3/v1_browser_20260929.json",
+  "source_sha256": "88f1589a60e0685f699c208337fc47d42faa8f32ac239927120385a1cb233ab5",
+  "redaction": "local path separators normalised to '/' and drive letters replaced by <local>; content otherwise unchanged",
+  "record": {
+    "task": "V1-C03",
+    "status": "tested",
+    "closure": "V1-C03 closed 2026-09-29: browser paths observed (success, confirmation guard, stale-run clearing, unconfirmed coverage, English and Vietnamese causal abstention after fix 1/1b, descriptive no-false-positive); NEEDS_INPUT not reachable in deterministic UI and PARTIAL not reached — both covered by UI unit tests; native media captured in C02 attempt 9. Public-safe media copies are left to V1-C04 packaging.",
+    "recorded_on": "2026-09-29",
+    "writer": {
+      "session": "Claude desktop app (coordinator, D25/D28)",
+      "host_model": "claude-opus-5-5"
+    },
+    "environment": {
+      "app": "app.py via .venv Streamlit, 127.0.0.1:8517, --browser.gatherUsageStats false (.claude/launch.json)",
+      "browser": "Claude desktop built-in browser (Chromium pane)",
+      "data": "Dữ liệu sales giả lập (examples/sales.csv), 8 rows × 7 columns",
+      "cloud_llm": "LLM agent option disabled in UI ('LLM agent — chưa bật trong ứng dụng'); no provider call"
+    },
+    "cases": [
+      {
+        "id": "semantic_confirmation_required",
+        "evidence_kind": "observed",
+        "check_state": "passed",
+        "observed": "Submitting without the grain/mapping confirmation checkbox shows 'Cần xác nhận ý nghĩa dữ liệu trước khi phân tích.' and no session is created."
+      },
+      {
+        "id": "success_completed",
+        "evidence_kind": "observed",
+        "check_state": "passed",
+        "observed": "Coverage confirmed, default periods: status 'Hoàn tất', KPIs 1.000 VND → 600 VND, −400 VND, −40,00%, period-length and no-causation caveats; 'Tạo Power BI project' enabled; clicking it showed 'Đã tạo project…' and a 'Tải Power BI project (.zip)' button (file not downloaded)."
+      },
+      {
+        "id": "new_session_no_stale_run",
+        "evidence_kind": "observed",
+        "check_state": "passed",
+        "observed": "Creating a new session cleared the previous result (no 'Kết quả phân tích' until re-run)."
+      },
+      {
+        "id": "coverage_unconfirmed",
+        "evidence_kind": "observed",
+        "check_state": "passed",
+        "observed": "Coverage checkbox off: COVERAGE_UNKNOWN warning at validation, result 'Hoàn tất' with 'Coverage chưa được người cung cấp xác nhận; khoảng trống không được diễn giải thành zero.' This matches the contract (observed rows stay accepted with the COVERAGE_UNKNOWN limitation; see tests/test_finding_validation.py::test_unknown_coverage_keeps_observed_period_limited_and_period_specific)."
+      },
+      {
+        "id": "abstained_english_causal",
+        "evidence_kind": "observed",
+        "check_state": "passed",
+        "observed": "'Why did revenue change and what caused it?': status 'Chưa đủ bằng chứng' (ABSTAINED), 'Causal inference is outside the supported analysis scope.', missing obligations incl. goal.causal_explanation, 'Tạo Power BI project' disabled with 'vẫn có thể tải JSON' message."
+      },
+      {
+        "id": "abstained_vietnamese_causal",
+        "evidence_kind": "observed",
+        "check_state": "failed",
+        "observed": "'Vì sao doanh thu thay đổi và nguyên nhân là gì?': status 'Hoàn tất' (COMPLETED) and export enabled. Defect: analysis_finalizer._CAUSAL_QUESTION matches English only.",
+        "repair": "fix 1 dispatched to builder sonnet (D28): v1_c03_fix1_builder_handoff.md"
+      },
+      {
+        "id": "abstained_vietnamese_causal_after_fix1",
+        "evidence_kind": "observed",
+        "check_state": "passed",
+        "observed": "After fix 1 and a Streamlit restart: 'Vì sao doanh thu thay đổi và nguyên nhân là gì?' → 'Chưa đủ bằng chứng' (ABSTAINED), 'Causal inference is outside the supported analysis scope.', goal.causal_explanation missing, 'Tạo Power BI project' disabled."
+      },
+      {
+        "id": "descriptive_vietnamese_after_fix1",
+        "evidence_kind": "observed",
+        "check_state": "passed",
+        "observed": "Default question 'Doanh thu thay đổi thế nào và nhóm nào đóng góp nhiều nhất?' still 'Hoàn tất' with export enabled (no false positive)."
+      },
+      {
+        "id": "needs_input",
+        "evidence_kind": "configured",
+        "check_state": "not_applicable_in_browser",
+        "observed": "NEEDS_INPUT arises only from the agent path (goal_disposition 'unresolved' in runtime.py); the deterministic UI mode cannot produce it and the agent option is disabled. Presentation covered by tests/test_ui.py::test_partial_needs_input_and_execution_failure_are_distinct."
+      },
+      {
+        "id": "partial",
+        "evidence_kind": "configured",
+        "check_state": "not_reached",
+        "observed": "No browser input with synthetic data produced PARTIAL in this session; export gate for partial covered by tests/test_ui.py::test_partial_artifact_remains_downloadable_but_explains_export_gate."
+      }
+    ],
+    "media": {
+      "native_r19": "deliverables/verification/dashboard_refresh_r3/media_r19_20260929/ (see v1_native_20260929_attempt9_r19_native.json)",
+      "public_safe_copies": "not_created (no packaging authorization in this step)"
+    },
+    "fix1": {
+      "builder": "alias sonnet (Claude Sonnet 5.5 per probe), D28",
+      "changed": {
+        "src/bi_analyst/analysis_finalizer.py": "17543b2a... -> def1482f6d39783bd11a422ce5dad98ac1fad4cfacbb7cd6829ac2291ca2a121",
+        "tests/test_analysis_finalizer.py": "d1038a13... -> f08b63ca64d6bb5a0f6ad8fb3b8e56061c5bee4e57b6b9d15b64566539b521a0"
+      },
+      "red": "builder-reported: 10 failed (5 Vietnamese causal questions × deterministic/agent), 4 passed descriptive",
+      "green": "builder: targeted 32 passed; full 422 passed, 2 skipped; Ruff clean. Coordinator re-run: targeted 32 passed, Ruff clean, hashes match",
+      "known_limits": "keyword gate: 'lý do'/'nguyên nhân' used descriptively will abstain (fail-safe); other causal phrasings ('điều gì khiến', 'yếu tố nào dẫn đến') are not caught",
+      "review": "claude_task_review ACCEPT (opus) with P3: folding made 'đâu' equal 'đầu' (descriptive 'đầu kỳ' questions blocked); 'Lí do'/'Nguyên do'/'Nguyên cớ' missed; negated mentions ('không cần giải thích lý do') still abstain (fail-safe, same as English)"
+    },
+    "fix1b": {
+      "handoff": "v1_c03_fix1b_builder_handoff.md",
+      "builder": "alias sonnet (Claude Sonnet 5.5), D28",
+      "changed": {
+        "src/bi_analyst/analysis_finalizer.py": "def1482f... -> 6224b96ba0918f14525c429e15c60605ce6c33913fb2d84fdac666d82b1815dd",
+        "tests/test_analysis_finalizer.py": "f08b63ca... -> c95cbd044aa48d16713b634e7d35e592dfa497d2b7c67671301d0b4741511ebf"
+      },
+      "red": "builder-reported: 7 failed (2 causal variants × 2 modes, 3 'đầu' descriptive questions), 33 passed",
+      "green": "coordinator run: full pytest 440 passed, 2 skipped, exit 0 (v1_c03_fix1b_full.junit.xml / _pytest.log); Ruff src tests scripts app.py run.py: All checks passed",
+      "known_limits": "keyword gate; unaccented 'do dau' always treated as causal; other causal phrasings ('điều gì khiến', 'yếu tố nào dẫn đến', 'sao ... lại') not caught; negated mentions abstain (fail-safe); folded-text collisions abstain on rare descriptive questions such as 'Khách hàng Nguyễn có doanh thu bao nhiêu?' and 'nhóm quản lý đó …' (fail-safe, outside the V1 Region/Product demo questions)",
+      "review": "claude_task_review ACCEPT (opus): both prior P3 fixed, fix 1 behaviour intact, 50 targeted tests pass, UI default and all 12 evaluation requests unchanged. New P3 (Nguyễn có / quản lý đó collisions) recorded as known limits: the defect used its two repair rounds (fix 1, fix 1b) per AGENTS, and the residual errors are fail-safe abstentions."
+    },
+    "next": "claude_task_review of fix 1; then close V1-C03 and start V1-C04 (package delta + FINAL review incl. Astra)."
+  }
+}

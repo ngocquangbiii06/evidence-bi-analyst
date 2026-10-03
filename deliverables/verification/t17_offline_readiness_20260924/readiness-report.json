@@ -1,0 +1,184 @@
+{
+  "acceptance_attempts_performed": 0,
+  "application_cloud_default": {
+    "external_llm_enabled": false,
+    "mode": "local_only",
+    "status": "off"
+  },
+  "attempt_denominator": 42,
+  "blocked_live_reasons": [
+    "explicit_live_opt_in_is_off",
+    "live_authorization_reference_missing",
+    "provider_not_explicitly_configured",
+    "fixed_provider_endpoint_not_explicitly_configured",
+    "evaluation_model_not_approved",
+    "evaluation_model_config_version_missing",
+    "credential_environment_reference_missing",
+    "input_token_rate_missing_or_nonpositive",
+    "output_token_rate_missing_or_nonpositive",
+    "per_attempt_cost_ceiling_unset",
+    "batch_cost_ceiling_unset"
+  ],
+  "cost_estimate_and_ceilings": {
+    "configured_batch_budget_usd": null,
+    "configured_per_attempt_budget_usd": null,
+    "currency": "USD",
+    "estimated_batch_usd": null,
+    "estimated_per_attempt_usd": null,
+    "estimated_per_call_usd": null,
+    "max_model_calls_per_attempt": 16,
+    "method": "AgentRunner byte-based pre-call reservation, bounded by policy limits",
+    "model_exposed_attempts": 39,
+    "status": "not_computable"
+  },
+  "credential_access": "not_performed",
+  "credential_presence": "not_checked",
+  "frozen_evaluation": {
+    "attempt_denominators": {
+      "all": 42,
+      "boundary": 18,
+      "model_exposed": 39,
+      "model_exposed_boundary": 15,
+      "numeric": 36,
+      "required_abstention": 6,
+      "supported": 24
+    },
+    "attempts_per_scenario": 3,
+    "manifest_entries": [
+      {
+        "path": "docs/FLAGSHIP_EXECUTION_PLAN.md",
+        "sha256": "d176b0172ee8465155fd4eb2a4c5d96c8e5e72340704f3aa2200577871b89a67"
+      },
+      {
+        "path": "docs/LUNA_ASTRA_BUILD_RUNBOOK.md",
+        "sha256": "1777ee863fc8e485b01b03a1131202021a38ceafef1d95aec782b110242d2ecc"
+      },
+      {
+        "path": "examples/evaluation/contracts.json",
+        "sha256": "803a257722f70de296388e005771142e4a920daf5ffe4b9673e58cb7d759b345"
+      },
+      {
+        "path": "examples/evaluation/development_e03.json",
+        "sha256": "e7c05e3cb9996591fc2b09fed48c785b9f275be6074acfd2566704b8a4fff498"
+      },
+      {
+        "path": "examples/evaluation/fixtures/confirmed_no_current.csv",
+        "sha256": "f4be73130dc3a28170685839102552ecc8cba0b1a19ebd80e432f83b5dbf54c2"
+      },
+      {
+        "path": "examples/evaluation/fixtures/excluded_nulls.csv",
+        "sha256": "cbe235c1a4d192ca6c7624714e86c96813cfa4ba04193e9a28f4cb2c89a9143b"
+      },
+      {
+        "path": "examples/evaluation/fixtures/hostile.csv",
+        "sha256": "487cdcc5fcc1197bd880af6d69fb15da04bea31b0027ec8a3cfbc13e39312ca7"
+      },
+      {
+        "path": "examples/evaluation/fixtures/incomplete_coverage.csv",
+        "sha256": "8908042b63905877b3b5130e133bd9e4f5e888a8aecfc946c89d9679ace1ebcd"
+      },
+      {
+        "path": "examples/evaluation/fixtures/negative_baseline.csv",
+        "sha256": "19b207d8c145c82d56e2087a3dbb735a0989edf742ef42d1c3ff2439e75cadb9"
+      },
+      {
+        "path": "examples/evaluation/fixtures/offsetting.csv",
+        "sha256": "32c41bbd1ddc90162d90010d0e94f52211fe6af91f308b5f5f4782681034d162"
+      },
+      {
+        "path": "examples/evaluation/fixtures/unknown_coverage.csv",
+        "sha256": "3dca8cd0a10d8d01e667267db02f3e86b8d0a2141d41ac6b28cc408f19d2ca03"
+      },
+      {
+        "path": "examples/evaluation/requests.json",
+        "sha256": "683d35befb03015760e77fe500a912d61e6054a95712000b8dc6ff1193440c33"
+      },
+      {
+        "path": "examples/evaluation/scenarios.json",
+        "sha256": "f82f925e65ca492259a508ac79c6f66ce5b9bc315091b09143052fdaf9d86aa1"
+      },
+      {
+        "path": "examples/null_sales.csv",
+        "sha256": "f0e004f238fb49fc14286988b530087e2a68ee7d26df4ae903a1d0cd5880a0ec"
+      },
+      {
+        "path": "examples/sales.csv",
+        "sha256": "f8dbbea55291e745efe68caa2d090cf937aa4343156454ab544a753c9de74ecd"
+      },
+      {
+        "path": "tests/test_evaluation_scenarios.py",
+        "sha256": "effff5e2a460feffc6d338be4868ea7a9e67b2f93da767a7e1384605285a3913"
+      }
+    ],
+    "manifest_file_sha256": "ee8d7a211d64977ffde2bf16c98b77b9c1cb49a36b656b152cc46e622f7ac3ca",
+    "manifest_sha256": "1b69d5d301dd2e750f36ec11ce94c0e94b42f1d4ca1578021968ee1c9691994e",
+    "model_exposed_attempt_count": 39,
+    "planned_attempt_count": 42,
+    "preflight_blocked_attempt_count": 3,
+    "scenario_count": 14,
+    "scenario_file_sha256": "f82f925e65ca492259a508ac79c6f66ce5b9bc315091b09143052fdaf9d86aa1",
+    "scenario_ids": [
+      "E01",
+      "E02",
+      "E03",
+      "E04",
+      "E05",
+      "E06",
+      "E07",
+      "E08",
+      "E09",
+      "E10",
+      "E11",
+      "E12",
+      "E13",
+      "E14"
+    ],
+    "status": "passed"
+  },
+  "live_enabled": false,
+  "live_invocation_performed": false,
+  "live_readiness": "blocked_live",
+  "model_calls": 0,
+  "model_exposed_attempt_denominator": 39,
+  "offline_dry_run": {
+    "actual_acceptance_attempts": 0,
+    "attempt_denominator": 42,
+    "baseline_report_sha256": "01b31580bc75ee7040cf186e728b165f8cc05834ad347e35b01f8a345952f4b6",
+    "batch_status": "completed",
+    "model_calls": 0,
+    "numeric_baseline_status": "pass",
+    "provider_calls": 0,
+    "scenario_count": 14,
+    "status": "passed"
+  },
+  "offline_readiness": "ready",
+  "output_paths": {
+    "live_output_dir": "deliverables/verification/t18_live_evaluation",
+    "offline_output_dir": "deliverables/verification/t17_offline_readiness_20260924",
+    "paths_validated_under_verification_root": true
+  },
+  "provider_calls": 0,
+  "schema_version": "1.0",
+  "version_bindings": {
+    "action_schema_sha256": {
+      "configured": "e656140f2295ba68810639d1367abd3580c43e49568d7ceea16acfcf30fdeebe",
+      "current": "e656140f2295ba68810639d1367abd3580c43e49568d7ceea16acfcf30fdeebe",
+      "matches": true
+    },
+    "evaluation_manifest_sha256": {
+      "configured": "1b69d5d301dd2e750f36ec11ce94c0e94b42f1d4ca1578021968ee1c9691994e",
+      "current": "1b69d5d301dd2e750f36ec11ce94c0e94b42f1d4ca1578021968ee1c9691994e",
+      "matches": true
+    },
+    "prompt_sha256": {
+      "configured": "aea406f3c3c19eb1a16d03efadfbea7985a19d14b7cc8c4bc2c865b3c84778cb",
+      "current": "aea406f3c3c19eb1a16d03efadfbea7985a19d14b7cc8c4bc2c865b3c84778cb",
+      "matches": true
+    },
+    "runtime_implementation_version": {
+      "configured": "0.1.0",
+      "current": "0.1.0",
+      "matches": true
+    }
+  }
+}

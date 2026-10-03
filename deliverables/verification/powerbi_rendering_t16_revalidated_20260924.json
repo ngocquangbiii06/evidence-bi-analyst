@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0",
+  "verification_id": "T16-R4-REVALIDATED-20260924",
+  "artifact": "deliverables/PowerBI_Demo_Candidate/EvidenceBI.pbip",
+  "artifact_sha256": "0ae8ee9012065f3298c97df131ea1bc6c9dab66e77dca2dabbfba9d6cf916ca2",
+  "candidate_tree_sha256": "f5da6c14f350ce2c19a5cd371844127c6fba810a8b6ab2dd3b1e3daa69423329",
+  "candidate_model_fingerprint": "b062c3582b2a93ccde67fda30c6daa2b6793474c501aa66f8646b3c5ad4a211f",
+  "model_file_sha256": "b76e05de1e381d6db5a33794424db3bcf98f13e65d7d873c7e3548aa9db212f0",
+  "report_tree_sha256": "f2eb8c63197f0cba57c1d98ee0ab7d156d7cc152a5fae1ef21298cd27f24bb02",
+  "static_verification": {
+    "path": "deliverables/verification/t15-candidate-verification.json",
+    "sha256": "24af7517c19f87a6111bb5d90dbaccc54cc5b16b9c131f9e87cbfc98c5c96f2e",
+    "schema_files_checked": 17,
+    "tables": 6,
+    "relationships": 3,
+    "measures": 5,
+    "visual_bindings_checked": 12,
+    "static_parity_pages": 2,
+    "static_parity_visuals": 9,
+    "failures": 0
+  },
+  "engine_verification": {
+    "path": "deliverables/verification/powerbi_engine_t16_revalidated_20260924.json",
+    "sha256": "c79bca73f4d76d59fffb785d0c3847ca035f97fa13bfa69497b1be983f5efc1b",
+    "execution": "completed",
+    "reconciliation": "passed",
+    "contexts_passed": "7/7",
+    "values_checked": 35,
+    "rendering": "not_checked"
+  },
+  "native_desktop": {
+    "product": "Power BI Desktop Store",
+    "version": "2.157.1354.0",
+    "opened_report_title": "EvidenceBI",
+    "observed_at_utc": "2026-09-24T08:16:31Z",
+    "full_refresh": "completed",
+    "refresh_warnings_after_completion": false,
+    "screenshot_archived": false,
+    "evidence_mode": "Direct interactive UI observation in the freshly opened candidate; screenshots were captured and inspected during this task."
+  },
+  "rendering": "passed",
+  "pages_expected": 2,
+  "pages_observed": 2,
+  "visuals_expected": 9,
+  "visuals_observed": 9,
+  "page_observations": [
+    {
+      "page": "Business performance",
+      "visual_count": 8,
+      "visuals": [
+        "Previous revenue KPI card; 943K displayed",
+        "Current revenue KPI card; 1M displayed",
+        "Revenue change KPI card; 60K displayed",
+        "Revenue growth KPI card; 6.4% displayed",
+        "Revenue change by Region bar chart; North, South, West categories visible",
+        "Revenue change by Product bar chart; Anchor, Growth, Stable categories visible",
+        "Observed Revenue by month line chart; January and February 2026 points visible",
+        "Analysis scope and limitations table; populated"
+      ],
+      "visual_errors_observed": false
+    },
+    {
+      "page": "Evidence & scope",
+      "visual_count": 1,
+      "visuals": [
+        "Computed findings evidence table; FindingID, Finding, EvidenceID, and Status columns, F001-F007 rows visible"
+      ],
+      "visual_errors_observed": false
+    }
+  ],
+  "caveats": [
+    "At the observed 67% page zoom, the repeated category caption inside the Previous KPI card is truncated; its visual title and 943K value remain visible. This is a cosmetic readability limitation, not a blank/error visual."
+  ],
+  "scope": "Native rendering observation for the exact candidate hashes above. No artifact save, promotion, analytical formula, semantic model, or report layout edit was performed during this visual check. PowerBI_Demo_Current remains unchanged. Cloud LLM remains OFF."
+}

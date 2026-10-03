@@ -1,0 +1,115 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "35829699879dfc38c755",
+  "displayName": "Tổng quan doanh thu",
+  "displayOption": "FitToPage",
+  "width": 1280,
+  "height": 800,
+  "visualInteractions": [
+    {
+      "source": "a3e0dbb33acd23f01768",
+      "target": "bb3a576deb7775a78c6b",
+      "type": "NoFilter"
+    },
+    {
+      "source": "a3e0dbb33acd23f01768",
+      "target": "5e999cf7f62c05fbca18",
+      "type": "NoFilter"
+    },
+    {
+      "source": "a3e0dbb33acd23f01768",
+      "target": "cd44dcbf57858845e8be",
+      "type": "NoFilter"
+    },
+    {
+      "source": "a3e0dbb33acd23f01768",
+      "target": "2d992aae536e27a7d63e",
+      "type": "NoFilter"
+    },
+    {
+      "source": "a3e0dbb33acd23f01768",
+      "target": "2e1131acdb55724ffc91",
+      "type": "NoFilter"
+    },
+    {
+      "source": "a3e0dbb33acd23f01768",
+      "target": "f502d15402c8400836e5",
+      "type": "NoFilter"
+    },
+    {
+      "source": "a3e0dbb33acd23f01768",
+      "target": "6fcea0e5f701a94ad535",
+      "type": "NoFilter"
+    },
+    {
+      "source": "2e1131acdb55724ffc91",
+      "target": "bb3a576deb7775a78c6b",
+      "type": "NoFilter"
+    },
+    {
+      "source": "2e1131acdb55724ffc91",
+      "target": "5e999cf7f62c05fbca18",
+      "type": "NoFilter"
+    },
+    {
+      "source": "2e1131acdb55724ffc91",
+      "target": "cd44dcbf57858845e8be",
+      "type": "NoFilter"
+    },
+    {
+      "source": "2e1131acdb55724ffc91",
+      "target": "2d992aae536e27a7d63e",
+      "type": "NoFilter"
+    },
+    {
+      "source": "2e1131acdb55724ffc91",
+      "target": "a3e0dbb33acd23f01768",
+      "type": "NoFilter"
+    },
+    {
+      "source": "2e1131acdb55724ffc91",
+      "target": "f502d15402c8400836e5",
+      "type": "NoFilter"
+    },
+    {
+      "source": "2e1131acdb55724ffc91",
+      "target": "6fcea0e5f701a94ad535",
+      "type": "NoFilter"
+    },
+    {
+      "source": "f502d15402c8400836e5",
+      "target": "bb3a576deb7775a78c6b",
+      "type": "NoFilter"
+    },
+    {
+      "source": "f502d15402c8400836e5",
+      "target": "5e999cf7f62c05fbca18",
+      "type": "NoFilter"
+    },
+    {
+      "source": "f502d15402c8400836e5",
+      "target": "cd44dcbf57858845e8be",
+      "type": "NoFilter"
+    },
+    {
+      "source": "f502d15402c8400836e5",
+      "target": "2d992aae536e27a7d63e",
+      "type": "NoFilter"
+    },
+    {
+      "source": "f502d15402c8400836e5",
+      "target": "a3e0dbb33acd23f01768",
+      "type": "NoFilter"
+    },
+    {
+      "source": "f502d15402c8400836e5",
+      "target": "2e1131acdb55724ffc91",
+      "type": "NoFilter"
+    },
+    {
+      "source": "f502d15402c8400836e5",
+      "target": "6fcea0e5f701a94ad535",
+      "type": "NoFilter"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "policy_id": "review-demo-policy",
+  "revision": 1,
+  "mode": "demo_cloud",
+  "external_llm_enabled": false,
+  "dataset_class": "synthetic",
+  "approved_dataset_hashes": [
+    "f8dbbea55291e745efe68caa2d090cf937aa4343156454ab544a753c9de74ecd"
+  ],
+  "approved_endpoint": "https://api.openai.com/v1/responses",
+  "approved_metrics": [
+    "Revenue"
+  ],
+  "approved_dimensions": [
+    "Region",
+    "Product"
+  ],
+  "approved_stages": [
+    "analysis"
+  ],
+  "approved_schema_columns": [],
+  "allow_question": false,
+  "max_cost_usd": 0,
+  "input_usd_per_million": 0,
+  "output_usd_per_million": 0,
+  "max_tool_calls": 12,
+  "max_model_calls": 16,
+  "max_run_seconds": 180,
+  "ttl_hours": 24
+}

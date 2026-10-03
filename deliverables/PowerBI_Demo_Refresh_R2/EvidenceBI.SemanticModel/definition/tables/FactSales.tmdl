@@ -1,0 +1,85 @@
+table FactSales
+	lineageTag: 0872c5de-84cf-469d-b009-347bd22b0128
+
+	measure Revenue = SUM('FactSales'[RevenueMinor])
+		formatString: #,0
+		displayFolder: Business KPIs
+		lineageTag: 81892c8d-d204-43f3-bf7a-b12816183880
+
+	measure 'Revenue Previous Period' =
+			VAR PeriodRows = CALCULATE(COUNTROWS('FactSales'), REMOVEFILTERS('DimDate'), FILTER(ALL('DimDate'), 'DimDate'[Date] >= DATE(2026, 1, 1) && 'DimDate'[Date] < DATE(2026, 2, 1)))
+			VAR Amount = CALCULATE([Revenue], REMOVEFILTERS('DimDate'), FILTER(ALL('DimDate'), 'DimDate'[Date] >= DATE(2026, 1, 1) && 'DimDate'[Date] < DATE(2026, 2, 1)))
+			RETURN IF(COALESCE(PeriodRows, 0) = 0, 0, Amount)
+		formatString: #,0
+		displayFolder: Business KPIs
+		lineageTag: ad4144ed-f2ee-4c73-ae6c-95493bf1563d
+
+	measure 'Revenue Current Period' =
+			VAR PeriodRows = CALCULATE(COUNTROWS('FactSales'), REMOVEFILTERS('DimDate'), FILTER(ALL('DimDate'), 'DimDate'[Date] >= DATE(2026, 2, 1) && 'DimDate'[Date] < DATE(2026, 3, 1)))
+			VAR Amount = CALCULATE([Revenue], REMOVEFILTERS('DimDate'), FILTER(ALL('DimDate'), 'DimDate'[Date] >= DATE(2026, 2, 1) && 'DimDate'[Date] < DATE(2026, 3, 1)))
+			RETURN IF(COALESCE(PeriodRows, 0) = 0, 0, Amount)
+		formatString: #,0
+		displayFolder: Business KPIs
+		lineageTag: 7cf6c61c-dd81-4450-80a2-dfc7577d9710
+
+	measure 'Revenue Change' =
+			VAR Previous = [Revenue Previous Period]
+			VAR CurrentAmount = [Revenue Current Period]
+			RETURN IF(ISBLANK(Previous) || ISBLANK(CurrentAmount), BLANK(), CurrentAmount - Previous)
+		formatString: #,0
+		displayFolder: Business KPIs
+		lineageTag: 34a0b59a-ba7d-4b61-b187-ad7c032f1d79
+
+	measure 'Revenue Growth %' =
+			VAR Previous = [Revenue Previous Period]
+			RETURN IF(Previous > 0, DIVIDE([Revenue Change], Previous), BLANK())
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Business KPIs
+		lineageTag: 56b55ade-e3a9-4435-974e-82507dc92cf8
+
+	column LineID
+		dataType: string
+		lineageTag: bfdf54ae-6778-4bbc-a765-44e611fbc1e1
+		summarizeBy: none
+		sourceColumn: LineID
+
+	column Date
+		dataType: dateTime
+		formatString: yyyy-MM-dd
+		lineageTag: b62285ef-0e92-4c87-983e-9ba580183946
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column RegionKey
+		dataType: int64
+		isHidden
+		lineageTag: cd69d36c-8f74-4514-85bc-d19e70a0895c
+		summarizeBy: none
+		sourceColumn: RegionKey
+
+	column ProductKey
+		dataType: int64
+		isHidden
+		lineageTag: 2427c478-9abf-400e-8956-9ea63e24e190
+		summarizeBy: none
+		sourceColumn: ProductKey
+
+	column RevenueMinor
+		dataType: int64
+		isHidden
+		lineageTag: 8c3fd303-335b-4dd0-abc9-4a371c8695c9
+		summarizeBy: none
+		sourceColumn: RevenueMinor
+
+	partition FactSales = m
+		mode: import
+		source =
+				let
+				    Rows = Json.Document(Binary.FromText("W1siMCIsIjIwMjYtMDEtMTUiLCIxIiwiMSIsIjEwNTY1OSJdLFsiMSIsIjIwMjYtMDItMTUiLCIxIiwiMSIsIjIyNTY1OSJdLFsiMiIsIjIwMjYtMDEtMTUiLCIxIiwiMiIsIjEwNDA0MCJdLFsiMyIsIjIwMjYtMDItMTUiLCIxIiwiMiIsIjEwOTA0MCJdLFsiNCIsIjIwMjYtMDEtMTUiLCIxIiwiMyIsIjEwNDc5OSJdLFsiNSIsIjIwMjYtMDItMTUiLCIxIiwiMyIsIjEwMTc5OSJdLFsiNiIsIjIwMjYtMDEtMTUiLCIyIiwiMSIsIjEwNjA2NSJdLFsiNyIsIjIwMjYtMDItMTUiLCIyIiwiMSIsIjgxMDY1Il0sWyI4IiwiMjAyNi0wMS0xNSIsIjIiLCIyIiwiMTA0MDI3Il0sWyI5IiwiMjAyNi0wMi0xNSIsIjIiLCIyIiwiOTIwMjciXSxbIjEwIiwiMjAyNi0wMS0xNSIsIjIiLCIzIiwiMTA2OTAzIl0sWyIxMSIsIjIwMjYtMDItMTUiLCIyIiwiMyIsIjEwMTkwMyJdLFsiMTIiLCIyMDI2LTAxLTE1IiwiMyIsIjEiLCIxMDgwODciXSxbIjEzIiwiMjAyNi0wMi0xNSIsIjMiLCIxIiwiOTMwODciXSxbIjE0IiwiMjAyNi0wMS0xNSIsIjMiLCIyIiwiMTAzMzM3Il0sWyIxNSIsIjIwMjYtMDItMTUiLCIzIiwiMiIsIjk1MzM3Il0sWyIxNiIsIjIwMjYtMDEtMTUiLCIzIiwiMyIsIjEwMDQ0NiJdLFsiMTciLCIyMDI2LTAyLTE1IiwiMyIsIjMiLCIxMDM0NDYiXV0=", BinaryEncoding.Base64)),
+				    Source = Table.FromRows(Rows, {"LineID", "Date", "RegionKey", "ProductKey", "RevenueMinor"}),
+				    Typed = Table.TransformColumnTypes(Source, {{"LineID", type text}, {"Date", type date}, {"RegionKey", Int64.Type}, {"ProductKey", Int64.Type}, {"RevenueMinor", Int64.Type}}, "en-US")
+				in
+				    Typed
+

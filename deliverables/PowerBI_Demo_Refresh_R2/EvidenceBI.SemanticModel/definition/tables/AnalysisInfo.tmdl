@@ -1,0 +1,25 @@
+table AnalysisInfo
+	lineageTag: c0dcb957-ac61-4abb-b20e-4a2b31642b80
+
+	column Property
+		dataType: string
+		lineageTag: a29be2a1-ed86-42b8-b377-6c1ef0e06a58
+		summarizeBy: none
+		sourceColumn: Property
+
+	column Value
+		dataType: string
+		lineageTag: 12badd1a-28f7-43aa-b9c7-6b5244eab825
+		summarizeBy: none
+		sourceColumn: Value
+
+	partition AnalysisInfo = m
+		mode: import
+		source =
+				let
+				    Rows = Json.Document(Binary.FromText("W1siRGF0YXNldCIsIjRjMWYwYzZhNTcxZmYzMGRhNWFiNGUwYmY5N2Y4ZjE2N2IyNmMyMWNmYTQzMDBhNzQ3MzczZDU2YjViMTU4ODUiXSxbIkNvdmVyYWdlIiwiQ29uZmlybWVkIl0sWyJQcmV2aW91cyIsIjIwMjYtMDEtMDEgdG8gMjAyNi0wMi0wMSAoZXhjbHVzaXZlKSJdLFsiQ3VycmVudCIsIjIwMjYtMDItMDEgdG8gMjAyNi0wMy0wMSAoZXhjbHVzaXZlKSJdLFsiU2NvcGUiLCJPbmx5IHNlbGVjdGVkIHBlcmlvZHMgYW5kIHVzZXIgZmlsdGVycyBhcmUgZXhwb3J0ZWQuIl0sWyJJbnRlcnByZXRhdGlvbiIsIk9ic2VydmVkIGNvbnRyaWJ1dGlvbnMgZG8gbm90IGVzdGFibGlzaCBleHRlcm5hbCBjYXVzYWxpdHkuIl0sWyJWYWxpZGF0ZWQgYW5hbHlzaXMgZmluZ2VycHJpbnQiLCIxM2RjZjJjNDgxMTAyYWU1Zjc5NWIwNTI5MWY4Mjc4Y2E1YjlmZGFjZjQ1MmQ5NWFlZTM0OTBhYzEyMDk4N2QyIl0sWyJBbmFseXNpcyBzdWZmaWNpZW5jeSIsImNvbXBsZXRlZCJdLFsiUm9vdCBhbmFseXNpcyBzY29wZSIsIntcImN1cnJlbnRcIjp7XCJlbmRcIjpcIjIwMjYtMDMtMDFcIixcInN0YXJ0XCI6XCIyMDI2LTAyLTAxXCJ9LFwiZGltZW5zaW9uXCI6bnVsbCxcImZpbHRlcnNcIjp7fSxcIm1ldHJpY19pZFwiOlwiUmV2ZW51ZVwiLFwicHJldmlvdXNcIjp7XCJlbmRcIjpcIjIwMjYtMDItMDFcIixcInN0YXJ0XCI6XCIyMDI2LTAxLTAxXCJ9LFwic2NhbGVcIjowLFwidW5pdFwiOlwiVk5EXCJ9Il0sWyJBbmFseXNpcyBsaW1pdGF0aW9uIiwiT2JzZXJ2ZWQgY2hhbmdlcyBhbmQgYWNjb3VudGluZyBjb250cmlidXRpb25zIGRvIG5vdCBlc3RhYmxpc2ggZXh0ZXJuYWwgY2F1c2F0aW9uLiJdXQ==", BinaryEncoding.Base64)),
+				    Source = Table.FromRows(Rows, {"Property", "Value"}),
+				    Typed = Table.TransformColumnTypes(Source, {{"Property", type text}, {"Value", type text}}, "en-US")
+				in
+				    Typed
+

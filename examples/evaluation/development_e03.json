@@ -1,0 +1,28 @@
+{
+  "revision": "T09-DEV-E03-1",
+  "purpose": "Offline paired-branch development evidence to sanity-check adaptive next-step selection.",
+  "acceptance_eligible": false,
+  "acceptance_ids": [],
+  "acceptance_denominator_contribution": 0,
+  "not_a_scenario": true,
+  "branches": [
+    {
+      "development_branch_id": "DEV-E03-REGION-FIRST",
+      "question_shape": "Compare Revenue across the same two periods and investigate the largest change.",
+      "synthetic_observation": {"overall_delta": -40, "region_deltas": {"North": -30, "South": -10}, "product_deltas": {"A": -20, "B": -20}},
+      "manual_branch_reason": "Regional evidence concentrates the current hypothesis on North; inspect Region next before choosing a product explanation.",
+      "expected_next_action": "breakdown_change(Region)",
+      "production_analytics_used": false,
+      "attempts": 0
+    },
+    {
+      "development_branch_id": "DEV-E03-PRODUCT-FIRST",
+      "question_shape": "Compare Revenue across the same two periods and investigate the largest change.",
+      "synthetic_observation": {"overall_delta": -40, "region_deltas": {"North": -20, "South": -20}, "product_deltas": {"A": -35, "B": -5}},
+      "manual_branch_reason": "Product evidence concentrates the current hypothesis on A; inspect Product next before choosing a regional explanation.",
+      "expected_next_action": "breakdown_change(Product)",
+      "production_analytics_used": false,
+      "attempts": 0
+    }
+  ]
+}

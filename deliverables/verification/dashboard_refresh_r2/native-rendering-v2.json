@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0",
+  "verification_id": "DASHBOARD-REFRESH-R2-NATIVE-20260926",
+  "artifact": "deliverables/PowerBI_Demo_Refresh_R2/EvidenceBI.pbip",
+  "artifact_sha256": "0ae8ee9012065f3298c97df131ea1bc6c9dab66e77dca2dabbfba9d6cf916ca2",
+  "candidate_tree_sha256": "18ba10fd2431c1c3b23583e4f75e3664c7953552129161c964197b443f18d867",
+  "candidate_model_fingerprint": "5689be6c93b0f26c0b2733e879ada99c87b9e991126eb00bb922ced7bd986ee6",
+  "model_file_sha256": "6dfd092b508b67b0c8d71d2e29a334377a6994ddf8f601e86c6233302a2a7ef4",
+  "report_tree_sha256": "74a148978ae8f67f8111682751c8ae255b2e914922d6a7edcba8844cb60f0813",
+  "static_verification": {
+    "path": "deliverables/verification/dashboard_refresh_r2/static-verification.json",
+    "sha256": "dc31410f574407131a276c79a8fb0a12c303b4d0636420c8754aca478917f4b0",
+    "schema_files_checked": 21,
+    "tables": 6,
+    "relationships": 3,
+    "measures": 5,
+    "visual_bindings_checked": 12,
+    "static_parity_pages": 2,
+    "static_parity_visuals": 13,
+    "failures": 0
+  },
+  "engine_verification": {
+    "path": "deliverables/verification/dashboard_refresh_r2/engine.json",
+    "sha256": "fbe20c03e48655fce30c9418b6fae5929c7c1c1a467d7c5c79191d724299c356",
+    "execution": "completed",
+    "reconciliation": "passed",
+    "contexts_passed": "7/7",
+    "values_checked": 35,
+    "rendering": "not_checked"
+  },
+  "interactions": "isolated_nofilter_configured",
+  "native_desktop": {
+    "product": "Power BI Desktop Store",
+    "version": "2.157.1354.0",
+    "port": 56769,
+    "database_id": "219417ae-edcf-4d50-bc59-38cbf042cde3",
+    "opened_report_title": "EvidenceBI",
+    "observed_at_utc": "2026-09-26T04:13:32.731198+00:00",
+    "full_refresh": "completed_as_reported",
+    "refresh_warnings_after_completion": false,
+    "screenshot_archived": true,
+    "screenshots": [
+      {
+        "page": "Tổng quan doanh thu",
+        "path": "deliverables/verification/dashboard_refresh_r2/native-page1.png",
+        "sha256": "893823be4976a62734fcf54de9ffa1690c90f85d691ee6f2291fb52fafa99ac0"
+      },
+      {
+        "page": "Bằng chứng và phạm vi",
+        "path": "deliverables/verification/dashboard_refresh_r2/native-page2.png",
+        "sha256": "66fb730b108c76e69bc5e7ee208539407cf37a54fdb7b0c1d8248fb167a0e4f1"
+      }
+    ],
+    "evidence_mode": "User-provided screenshots from opened Power BI Desktop R2 artifact, verified against exact R2 PBIP hashes and active TOM engine."
+  },
+  "rendering": "passed",
+  "pages_expected": 2,
+  "pages_observed": 2,
+  "visuals_expected": 13,
+  "visuals_observed": 13,
+  "improvements_verified_in_r2": [
+    "Monthly chart title shortened to concise 'Doanh thu quan sát theo tháng'",
+    "Time-series limitation caveat visible in T02 text without truncation",
+    "Findings and Scope tables displayed with wordWrap enabled and scrollbars intact",
+    "Interaction isolation configured on Overview page (NoFilter on data visuals)"
+  ],
+  "caveats": [
+    "The native evidence was supplied as screenshots after user opened and refreshed the artifact in Power BI Desktop; engine DAX was independently verified via port 56769.",
+    "The screenshots confirm expected populated pages and values; they do not certify arbitrary user data uploads or external cloud deployment."
+  ],
+  "scope": "Native rendering and engine observation for exact Refresh_R2 hashes. No analytical formula or historical demo was modified. Cloud LLM remains OFF."
+}

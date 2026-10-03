@@ -1,0 +1,185 @@
+{
+  "purpose": "Prove that the Power BI R19 artifact in the V1 final package is the artifact checked natively on 2026-09-29 (8 click cases, engine 7/7).",
+  "algorithm": "tree = SHA-256 of the UTF-8 text formed by one line '<sha256>  <relative path>' per file, files sorted by relative path casefolded, lines joined by '\\n' plus a trailing '\\n' (same as scripts/build_demo.py::_tree_sha256).",
+  "exclusion_rule": "Paths containing a '.pbi' directory segment (Power BI Desktop local settings and data cache) are excluded; the release packager denies them and they are not part of the authored artifact.",
+  "how_to_verify": "Hash every file listed under 'files' in the extracted package and recompute 'packaged_tree' with the algorithm above.",
+  "parts": {
+    "EvidenceBI.Report": {
+      "checked_tree_including_pbi": "51dcf2ea790ed5370aec793bf7e06741b8b434203149853e3fe36c20ecdbbb91",
+      "checked_tree_excluding_pbi": "143102730ed87eb69559eae1b813239370c4d3a397b8bd75f4e32ce42f028b71",
+      "packaged_tree": "143102730ed87eb69559eae1b813239370c4d3a397b8bd75f4e32ce42f028b71",
+      "identical_excluding_pbi": true,
+      "files": [
+        {
+          "path": ".platform",
+          "sha256": "585b2f2f8c3519eebeff7673ba7de1d4ebb2fc6ed61768f7d925ecad33cfc184"
+        },
+        {
+          "path": "definition.pbir",
+          "sha256": "10b3a79886c20c759b06b35d27c547da4e8a101524c14d61991439ae6d66a610"
+        },
+        {
+          "path": "definition/pages/35829699879dfc38c755/page.json",
+          "sha256": "31b2e39684fe2d33e6acf4f4a541c4a3f8c2cb5b08650591e94215ee8b63a8a0"
+        },
+        {
+          "path": "definition/pages/35829699879dfc38c755/visuals/2d992aae536e27a7d63e/visual.json",
+          "sha256": "4022aee2673ace1372541cb93b1f57676dd27ea32cd47ccf70d1079fbdc38581"
+        },
+        {
+          "path": "definition/pages/35829699879dfc38c755/visuals/2e1131acdb55724ffc91/visual.json",
+          "sha256": "b0204dba7e5579360b314e42fca455ad83a8868368107e5a18a8187c4ec0f4d0"
+        },
+        {
+          "path": "definition/pages/35829699879dfc38c755/visuals/5e999cf7f62c05fbca18/visual.json",
+          "sha256": "43fe08c5d1cb4bb3f8220a72c79840671a34c35b791633852593e639b0641624"
+        },
+        {
+          "path": "definition/pages/35829699879dfc38c755/visuals/6fcea0e5f701a94ad535/visual.json",
+          "sha256": "a1b9398d12866509fa2e5a3c4496318c46052847bcc1029ff8165e50c64ccf06"
+        },
+        {
+          "path": "definition/pages/35829699879dfc38c755/visuals/a3e0dbb33acd23f01768/visual.json",
+          "sha256": "5c4f5853a514963b4ca7a21c0d601b4df9adfc7bfa88027026ae361af28e6132"
+        },
+        {
+          "path": "definition/pages/35829699879dfc38c755/visuals/bb3a576deb7775a78c6b/visual.json",
+          "sha256": "eebaed27255d91d5d24227ebf33c49dc6e3a8a3c0d5babb810f887a06d1c6eed"
+        },
+        {
+          "path": "definition/pages/35829699879dfc38c755/visuals/cd44dcbf57858845e8be/visual.json",
+          "sha256": "9c87f6caaee48bb791aa1098e09652da5f46b42d5cd26291d759d2d9c640aa61"
+        },
+        {
+          "path": "definition/pages/35829699879dfc38c755/visuals/d33f7a225505c4d0d0e7/visual.json",
+          "sha256": "e7f1b55a01369fd0cfec717a3137e978b9f539884083baea00913970fbc8b05a"
+        },
+        {
+          "path": "definition/pages/35829699879dfc38c755/visuals/f502d15402c8400836e5/visual.json",
+          "sha256": "13117947d13df2e917996ec9c25ffcf3ebb02b1b7eb70b03c4666e333699dfe5"
+        },
+        {
+          "path": "definition/pages/d0e52e7424dbaf3403bc/page.json",
+          "sha256": "39da56a39adb9be2e05ec4feb060272d1f6021ad04adbf21657fe9e6838af290"
+        },
+        {
+          "path": "definition/pages/d0e52e7424dbaf3403bc/visuals/7a42c14c3a73245dcea6/visual.json",
+          "sha256": "e78d502585c1da72b920879b277ee7cebc00eec30aa172173e938c153174350b"
+        },
+        {
+          "path": "definition/pages/d0e52e7424dbaf3403bc/visuals/80e56a04a21ae63b9640/visual.json",
+          "sha256": "bf308fc35f8fe7525c219a9bfc28f2674d11ef0f09b5b023a15490e0f9e50435"
+        },
+        {
+          "path": "definition/pages/d0e52e7424dbaf3403bc/visuals/8e88c1307dc25de96ea6/visual.json",
+          "sha256": "232a2587cf337f95ec2dc7a9b5235a99db23c6bd65571e4265b4ffeaebefe523"
+        },
+        {
+          "path": "definition/pages/d0e52e7424dbaf3403bc/visuals/ce39d573e6731576cb74/visual.json",
+          "sha256": "d15595f9f27f80082e88cf7168b310c408f45044c790eafc98644a4cec88f83a"
+        },
+        {
+          "path": "definition/pages/pages.json",
+          "sha256": "407cc0c6922f606bf1e6ff0077ad30bc928f4d108393d6248d4afa3f5f5f08a4"
+        },
+        {
+          "path": "definition/report.json",
+          "sha256": "8370abf3af3cb79df265e87f7fca836be65e2fe43e8645d04f423ac231be0284"
+        },
+        {
+          "path": "definition/version.json",
+          "sha256": "c8bdd966a85f1eaab4312d2096b6d7b508243e4d7bc5a4d25af3cfcb1056a4e7"
+        }
+      ],
+      "excluded_local_pbi_files_in_checked_copy": [
+        {
+          "path": ".pbi/localSettings.json",
+          "sha256": "c95ffefd614829360a22d519534bcbd0ea807ee130f89d800e4eea7dae5d369a"
+        }
+      ]
+    },
+    "EvidenceBI.SemanticModel": {
+      "checked_tree_including_pbi": "37d04a42658db5df8f9d3aaba7361eb75c5de76412e191695d3a69adf5301e07",
+      "checked_tree_excluding_pbi": "d6fb8a7dae71a9c424df45d05f02840c675efd8038c4efa6530fbd74538b9155",
+      "packaged_tree": "d6fb8a7dae71a9c424df45d05f02840c675efd8038c4efa6530fbd74538b9155",
+      "identical_excluding_pbi": true,
+      "files": [
+        {
+          "path": ".platform",
+          "sha256": "79a4828736362132fd812fd4acc955a82ed6f5ee30ed88f40171d68907cbd14c"
+        },
+        {
+          "path": "definition.pbism",
+          "sha256": "ed99ec078efd2ff27fc1c65cc97902138d7d3c438acdb7770ae37dc71c7f06c8"
+        },
+        {
+          "path": "definition/database.tmdl",
+          "sha256": "822c914b643bca32bb20abd8a762df8204a1b9ef02acc2bc7348727f6699cb96"
+        },
+        {
+          "path": "definition/model.tmdl",
+          "sha256": "28ed0e5a178e3e13d24e9de402874b3875f863cbc8a4f8aa425649eb04ecd802"
+        },
+        {
+          "path": "definition/relationships.tmdl",
+          "sha256": "fabeff8e765d635faf1006cc6c4527ac4d2a02921a4a3fd059eef4cc671f697e"
+        },
+        {
+          "path": "definition/tables/AnalysisInfo.tmdl",
+          "sha256": "201fde4b43bee630be5f6dcc45b8413c0e070fbd7ab0ae539e268188dbbaa79c"
+        },
+        {
+          "path": "definition/tables/DimDate.tmdl",
+          "sha256": "2589c67b92488c0c3490c20606d042f2b9b8e9e990d63a5e14a01821a9207bad"
+        },
+        {
+          "path": "definition/tables/DimProduct.tmdl",
+          "sha256": "f6482640862d570ce90e7798eaa4355bcae5ddf1f086efc905fe79961f117f2e"
+        },
+        {
+          "path": "definition/tables/DimRegion.tmdl",
+          "sha256": "7183b1c13954fec17029127e2f00631abd921e53658ffd4787ec6383cb723a62"
+        },
+        {
+          "path": "definition/tables/Evidence.tmdl",
+          "sha256": "b23ea20095582fa9f439b0fbda13ce609648ec2dc3b12d457fe5e463fb0b90e8"
+        },
+        {
+          "path": "definition/tables/FactSales.tmdl",
+          "sha256": "5cf84e71f6552fab3dc3f0505c24608140b7b87dff86a0011bd26a25fc211bbd"
+        },
+        {
+          "path": "diagramLayout.json",
+          "sha256": "65fc35405e719523d2ee41dddc3811fea9e8f45260255eb23f1845730c224b22"
+        }
+      ],
+      "excluded_local_pbi_files_in_checked_copy": [
+        {
+          "path": ".pbi/cache.abf",
+          "sha256": "9999f665309d32afb4265fde470e64c27f4590917b6577cbb323eb91075480e4"
+        },
+        {
+          "path": ".pbi/editorSettings.json",
+          "sha256": "b5eaeb2175fa47e040ea87779121ac87c3ebc1f8f5a7768c3dec8787d92bbb3e"
+        },
+        {
+          "path": ".pbi/localSettings.json",
+          "sha256": "8cb57ee000e8f5ab25217c3a7eef712f020538ab6bb4cfee292e9c0af171fda2"
+        }
+      ]
+    }
+  },
+  "top_level_files_packaged": {
+    "bi_spec.json": "e153140a76e76da44060e889c8e8bef6db12f2fe61ee9d35cd2197286b222c38",
+    "business_case_summary.json": "b77623a11cb339af6742a69e534b4762a18a0eb63d8e4c7b594b06cba1ad4709",
+    "demo_dataset_manifest.json": "4dfe1d0b5ae2c222bbd2b2fc38f7159e7cab79ad00395dc3de55040dbedd2944",
+    "demo_sales.csv": "4c1f0c6a571ff30da5ab4e0bf97f8f167b26c21cfa4300a747373d56b5b15885",
+    "evidence.json": "a81f4bfe4a513d8490841ca7c3f41235b868d02dc9405726b38a60e4e7f53237",
+    "EvidenceBI.pbip": "7d4bd5268f1ae1418465e46a6b7a48e816e9c555972e44eee0402256a66e8844",
+    "export_manifest.json": "a8b0da9fcb39fd0455963686d090f3e1229a9e4857a4ec72e72643513780f150",
+    "README.md": "f458c9186fbf197ffe65ad65a502bf9cbb13ad71a9d0e76037b77526b55466a4",
+    "verification_cases.json": "c8f3ff1bdcc454d92421fafb945d80c287348ea9f5d123ad194621ca5529cd9d"
+  },
+  "top_level_files_identical_to_checked": true,
+  "result": true
+}

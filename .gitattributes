@@ -1,0 +1,18 @@
+# Frozen acceptance manifest inputs must keep LF line endings
+docs/FLAGSHIP_EXECUTION_PLAN.md text eol=lf
+docs/LUNA_ASTRA_BUILD_RUNBOOK.md text eol=lf
+examples/evaluation/acceptance_manifest.json text eol=lf
+examples/evaluation/contracts.json text eol=lf
+examples/evaluation/development_e03.json text eol=lf
+examples/evaluation/fixtures/confirmed_no_current.csv text eol=lf
+examples/evaluation/fixtures/excluded_nulls.csv text eol=lf
+examples/evaluation/fixtures/hostile.csv text eol=lf
+examples/evaluation/fixtures/incomplete_coverage.csv text eol=lf
+examples/evaluation/fixtures/negative_baseline.csv text eol=lf
+examples/evaluation/fixtures/offsetting.csv text eol=lf
+examples/evaluation/fixtures/unknown_coverage.csv text eol=lf
+examples/evaluation/requests.json text eol=lf
+examples/evaluation/scenarios.json text eol=lf
+examples/null_sales.csv text eol=lf
+examples/sales.csv text eol=lf
+tests/test_evaluation_scenarios.py text eol=lf

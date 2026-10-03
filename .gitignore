@@ -1,0 +1,51 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.codex/
+t/
+tmp/
+src/*.egg-info/
+.env
+.env.*
+!.env.example
+.DS_Store
+build/
+dist/
+runtime/
+.runtime/
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
+*.pbix
+*.abf
+
+# Local Power BI/Desktop and operational artifacts are not part of the public bundle.
+# One-time historical bridge tests and their private runtime remain recoverable only
+# under tmp/; they are intentionally outside the public pytest suite.
+deliverables/PowerBI_Demo_Current/
+deliverables/PowerBI_Demo_Candidate_T15_R0_Superseded/
+deliverables/PowerBI_Demo_Candidate_DesktopSaved_20260924/
+deliverables/PowerBI_Demo/
+deliverables/PowerBI_NullCase/
+deliverables/verification/*
+!deliverables/verification/powerbi_engine_t16_revalidated_20260924.json
+!deliverables/verification/powerbi_rendering_t16_revalidated_20260924.json
+!deliverables/verification/t15-candidate-verification.json
+!deliverables/verification/t19_streamlit_walkthrough_20260924.json
+!deliverables/verification/t19_public_safe_20260924/
+!deliverables/verification/t19_public_safe_20260924/**
+!deliverables/verification/t18_live_evaluation_r6_live/
+!deliverables/verification/t18_live_evaluation_r6_live/*.json
+!deliverables/verification/t17_offline_readiness_20260924/
+!deliverables/verification/t17_offline_readiness_20260924/readiness-report.json
+
+# Public-safe evidence already included in the V1 final release bundle.
+!deliverables/verification/dashboard_refresh_r2/
+!deliverables/verification/dashboard_refresh_r2/**
+!deliverables/verification/dashboard_refresh_r3/
+!deliverables/verification/dashboard_refresh_r3/media_r19_20260929/
+!deliverables/verification/dashboard_refresh_r3/media_r19_20260929/**
+!deliverables/verification/v1_final_public/
+!deliverables/verification/v1_final_public/**

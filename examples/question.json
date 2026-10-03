@@ -1,0 +1,8 @@
+{
+  "question": "What changed in revenue between January and February, and which region contributed most?",
+  "metric_id": "Revenue",
+  "previous": {"start":"2026-01-01", "end":"2026-02-01"},
+  "current": {"start":"2026-02-01", "end":"2026-03-01"},
+  "dimensions": ["Region", "Product"],
+  "filters": {}
+}

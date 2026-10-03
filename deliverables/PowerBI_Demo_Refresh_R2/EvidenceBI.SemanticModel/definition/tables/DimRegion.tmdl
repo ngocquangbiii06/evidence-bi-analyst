@@ -1,0 +1,26 @@
+table DimRegion
+	lineageTag: a17b1901-8031-43fe-97a9-5b25d7d90e01
+
+	column RegionKey
+		dataType: int64
+		isHidden
+		lineageTag: a10590dd-651d-4502-9384-4c1e38580273
+		summarizeBy: none
+		sourceColumn: RegionKey
+
+	column Region
+		dataType: string
+		lineageTag: e82c73e6-0e9f-4d65-b823-1f94c973840a
+		summarizeBy: none
+		sourceColumn: Region
+
+	partition DimRegion = m
+		mode: import
+		source =
+				let
+				    Rows = Json.Document(Binary.FromText("W1siMSIsIk5vcnRoIl0sWyIyIiwiU291dGgiXSxbIjMiLCJXZXN0Il1d", BinaryEncoding.Base64)),
+				    Source = Table.FromRows(Rows, {"RegionKey", "Region"}),
+				    Typed = Table.TransformColumnTypes(Source, {{"RegionKey", Int64.Type}, {"Region", type text}}, "en-US")
+				in
+				    Typed
+

@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "generator_version": "dashboard-refresh-r3",
+  "seed": 20260923,
+  "row_count": 18,
+  "csv_schema": [
+    "LineID",
+    "OrderID",
+    "OrderDate",
+    "CustomerID",
+    "Region",
+    "Product",
+    "Revenue"
+  ],
+  "csv_sha256": "4c1f0c6a571ff30da5ab4e0bf97f8f167b26c21cfa4300a747373d56b5b15885",
+  "oracle_sha256": "c8f3ff1bdcc454d92421fafb945d80c287348ea9f5d123ad194621ca5529cd9d",
+  "region_product_deltas_minor": {
+    "North/Anchor": 120000,
+    "North/Growth": 5000,
+    "North/Stable": -3000,
+    "South/Anchor": -25000,
+    "South/Growth": -12000,
+    "South/Stable": -5000,
+    "West/Anchor": -15000,
+    "West/Growth": -8000,
+    "West/Stable": 3000
+  }
+}

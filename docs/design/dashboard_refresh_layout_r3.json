@@ -1,0 +1,218 @@
+{
+  "schema_version": "1.0",
+  "revision": "dashboard-refresh-r3",
+  "canvas": {
+    "width": 1280,
+    "height": 800
+  },
+  "inventory": {
+    "pages": 2,
+    "data_visuals": 9,
+    "text_objects": 4,
+    "total_objects": 13
+  },
+  "pages": [
+    {
+      "key": "overview",
+      "id": "35829699879dfc38c755",
+      "display_name": "Tổng quan doanh thu",
+      "objects": [
+        {
+          "key": "T01",
+          "id": "d33f7a225505c4d0d0e7",
+          "kind": "text",
+          "type": "textbox",
+          "roles": {},
+          "rectangle": {"x": 24, "y": 16, "width": 1232, "height": 80}
+        },
+        {
+          "key": "K01",
+          "id": "bb3a576deb7775a78c6b",
+          "kind": "data",
+          "type": "cardVisual",
+          "roles": {"Data": ["FactSales.Revenue Previous Period"]},
+          "rectangle": {"x": 24, "y": 116, "width": 296, "height": 116}
+        },
+        {
+          "key": "K02",
+          "id": "5e999cf7f62c05fbca18",
+          "kind": "data",
+          "type": "cardVisual",
+          "roles": {"Data": ["FactSales.Revenue Current Period"]},
+          "rectangle": {"x": 336, "y": 116, "width": 296, "height": 116}
+        },
+        {
+          "key": "K03",
+          "id": "cd44dcbf57858845e8be",
+          "kind": "data",
+          "type": "cardVisual",
+          "roles": {"Data": ["FactSales.Revenue Change"]},
+          "rectangle": {"x": 648, "y": 116, "width": 296, "height": 116}
+        },
+        {
+          "key": "K04",
+          "id": "2d992aae536e27a7d63e",
+          "kind": "data",
+          "type": "cardVisual",
+          "roles": {"Data": ["FactSales.Revenue Growth %"]},
+          "rectangle": {"x": 960, "y": 116, "width": 296, "height": 116}
+        },
+        {
+          "key": "C01",
+          "id": "a3e0dbb33acd23f01768",
+          "kind": "data",
+          "type": "barChart",
+          "roles": {
+            "Category": ["DimRegion.Region"],
+            "Y": ["FactSales.Revenue Change"]
+          },
+          "rectangle": {"x": 24, "y": 252, "width": 608, "height": 268}
+        },
+        {
+          "key": "C02",
+          "id": "2e1131acdb55724ffc91",
+          "kind": "data",
+          "type": "barChart",
+          "roles": {
+            "Category": ["DimProduct.Product"],
+            "Y": ["FactSales.Revenue Change"]
+          },
+          "rectangle": {"x": 648, "y": 252, "width": 608, "height": 268}
+        },
+        {
+          "key": "C03",
+          "id": "f502d15402c8400836e5",
+          "kind": "data",
+          "type": "columnChart",
+          "roles": {
+            "Category": ["DimDate.Month"],
+            "Y": ["FactSales.Revenue"]
+          },
+          "rectangle": {"x": 24, "y": 540, "width": 448, "height": 236}
+        },
+        {
+          "key": "T02",
+          "id": "6fcea0e5f701a94ad535",
+          "kind": "text",
+          "type": "textbox",
+          "roles": {},
+          "rectangle": {"x": 492, "y": 540, "width": 764, "height": 236}
+        }
+      ]
+    },
+    {
+      "key": "evidence",
+      "id": "d0e52e7424dbaf3403bc",
+      "display_name": "Bằng chứng và phạm vi",
+      "objects": [
+        {
+          "key": "T03",
+          "id": "7a42c14c3a73245dcea6",
+          "kind": "text",
+          "type": "textbox",
+          "roles": {},
+          "rectangle": {"x": 24, "y": 16, "width": 1232, "height": 80}
+        },
+        {
+          "key": "E01",
+          "id": "8e88c1307dc25de96ea6",
+          "kind": "data",
+          "type": "tableEx",
+          "roles": {
+            "Values": [
+              "Evidence.FindingID",
+              "Evidence.Finding",
+              "Evidence.ScopeLabel",
+              "Evidence.Status"
+            ]
+          },
+          "rectangle": {"x": 24, "y": 116, "width": 796, "height": 536}
+        },
+        {
+          "key": "S01",
+          "id": "80e56a04a21ae63b9640",
+          "kind": "data",
+          "type": "tableEx",
+          "roles": {
+            "Values": ["AnalysisInfo.Property", "AnalysisInfo.Value"]
+          },
+          "rectangle": {"x": 840, "y": 116, "width": 416, "height": 536}
+        },
+        {
+          "key": "T04",
+          "id": "ce39d573e6731576cb74",
+          "kind": "text",
+          "type": "textbox",
+          "roles": {},
+          "rectangle": {"x": 24, "y": 672, "width": 1232, "height": 104}
+        }
+      ]
+    }
+  ],
+  "interactions": {
+    "required_behavior": "none_between_overview_data_visuals",
+    "pbir_static_encoding": "definition/pages/35829699879dfc38c755/page.json::visualInteractions",
+    "static_status": "not_checked",
+    "filter_type": "NoFilter",
+    "sources": [
+      "a3e0dbb33acd23f01768",
+      "2e1131acdb55724ffc91",
+      "f502d15402c8400836e5"
+    ],
+    "targets": [
+      "bb3a576deb7775a78c6b",
+      "5e999cf7f62c05fbca18",
+      "cd44dcbf57858845e8be",
+      "2d992aae536e27a7d63e",
+      "a3e0dbb33acd23f01768",
+      "2e1131acdb55724ffc91",
+      "f502d15402c8400836e5",
+      "6fcea0e5f701a94ad535"
+    ]
+  },
+  "presentation_rules_r2": {
+    "card_formatting": {
+      "K03_change": {"signed": true, "pattern": "+#,0;-#,0;#,0"},
+      "K04_growth": {"signed": true, "decimals": 2, "pattern": "+0.00%;-0.00%;0.00%"}
+    },
+    "table_formatting": {
+      "E01_findings": {"wordWrap_columnHeaders": true, "wordWrap_values": true},
+      "S01_scope": {"wordWrap_columnHeaders": true, "wordWrap_values": true}
+    },
+    "bar_formatting": {
+      "positive_color": "#087F72",
+      "negative_color": "#B54734",
+      "signed_data_labels": true
+    },
+    "monthly_trend": {
+      "concise_title": "Doanh thu quan sát theo tháng",
+      "caveat_in_narrative": true
+    }
+  },
+  "allowed_differences_from_v1": {
+    "report": ["page display names"],
+    "model": [
+      "Evidence.ScopeLabel:string and its row value",
+      "AnalysisInfo.Validated analysis fingerprint value from the current authoritative artifact"
+    ],
+    "visuals": [
+      "four deterministic textbox objects",
+      "positions and presentation formatting",
+      "scope visual moved from overview to evidence",
+      "trend visual type lineChart to columnChart with Category/Y bindings preserved",
+      "findings Values projection EvidenceID replaced by ScopeLabel",
+      "tableEx wordWrap on values and columnHeaders",
+      "page.json visualInteractions configured to NoFilter across overview data visuals"
+    ]
+  },
+  "frozen_invariants": [
+    "PBIR schema versions and datasetReference",
+    "page IDs and page order",
+    "nine v1 data visual IDs",
+    "DAX measure names, expressions and format strings",
+    "semantic relationships",
+    "semantic model culture, source metadata, partitions, M expressions and all other AnalysisInfo rows/values",
+    "all data bindings except the explicit E01 projection replacement",
+    "authoritative artifact and accepted finding semantics"
+  ]
+}

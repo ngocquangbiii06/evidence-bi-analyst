@@ -1,0 +1,138 @@
+{
+    "schema_version":  "1.0",
+    "declared_model_fingerprint":  "b062c3582b2a93ccde67fda30c6daa2b6793474c501aa66f8646b3c5ad4a211f",
+    "model_file_sha256":  "b76e05de1e381d6db5a33794424db3bcf98f13e65d7d873c7e3548aa9db212f0",
+    "cases_sha256":  "4f0151c5cd063b12ff56f7460b336c1c501b67205644c4638c188b602d889fd5",
+    "executed_at_utc":  "2026-09-24T08:15:10.6364895Z",
+    "execution":  "completed",
+    "reconciliation":  "passed",
+    "rendering":  "not_checked",
+    "cases":  [
+                  {
+                      "id":  "root",
+                      "passed":  true,
+                      "actual":  {
+                                     "Base":  1946726,
+                                     "Previous":  943363,
+                                     "Current":  1003363,
+                                     "Change":  60000,
+                                     "Growth":  0.0636022400708953
+                                 },
+                      "expected":  {
+                                       "Base":  1946726,
+                                       "Previous":  943363,
+                                       "Current":  1003363,
+                                       "Change":  60000,
+                                       "Growth":  0.0636022400708953
+                                   }
+                  },
+                  {
+                      "id":  "region_north",
+                      "passed":  true,
+                      "actual":  {
+                                     "Base":  750996,
+                                     "Previous":  314498,
+                                     "Current":  436498,
+                                     "Change":  122000,
+                                     "Growth":  0.38791979599234333
+                                 },
+                      "expected":  {
+                                       "Base":  750996,
+                                       "Previous":  314498,
+                                       "Current":  436498,
+                                       "Change":  122000,
+                                       "Growth":  0.38791979599234333
+                                   }
+                  },
+                  {
+                      "id":  "product_anchor",
+                      "passed":  true,
+                      "actual":  {
+                                     "Base":  719622,
+                                     "Previous":  319811,
+                                     "Current":  399811,
+                                     "Change":  80000,
+                                     "Growth":  0.25014774351101121
+                                 },
+                      "expected":  {
+                                       "Base":  719622,
+                                       "Previous":  319811,
+                                       "Current":  399811,
+                                       "Change":  80000,
+                                       "Growth":  0.2501477435110112
+                                   }
+                  },
+                  {
+                      "id":  "intersection_north_anchor",
+                      "passed":  true,
+                      "actual":  {
+                                     "Base":  331318,
+                                     "Previous":  105659,
+                                     "Current":  225659,
+                                     "Change":  120000,
+                                     "Growth":  1.1357290907542188
+                                 },
+                      "expected":  {
+                                       "Base":  331318,
+                                       "Previous":  105659,
+                                       "Current":  225659,
+                                       "Change":  120000,
+                                       "Growth":  1.1357290907542188
+                                   }
+                  },
+                  {
+                      "id":  "date_january",
+                      "passed":  true,
+                      "actual":  {
+                                     "Base":  943363,
+                                     "Previous":  943363,
+                                     "Current":  1003363,
+                                     "Change":  60000,
+                                     "Growth":  0.0636022400708953
+                                 },
+                      "expected":  {
+                                       "Base":  943363,
+                                       "Previous":  943363,
+                                       "Current":  1003363,
+                                       "Change":  60000,
+                                       "Growth":  0.0636022400708953
+                                   }
+                  },
+                  {
+                      "id":  "date_no_rows",
+                      "passed":  true,
+                      "actual":  {
+                                     "Base":  null,
+                                     "Previous":  943363,
+                                     "Current":  1003363,
+                                     "Change":  60000,
+                                     "Growth":  0.0636022400708953
+                                 },
+                      "expected":  {
+                                       "Base":  null,
+                                       "Previous":  943363,
+                                       "Current":  1003363,
+                                       "Change":  60000,
+                                       "Growth":  0.0636022400708953
+                                   }
+                  },
+                  {
+                      "id":  "no_region_rows",
+                      "passed":  true,
+                      "actual":  {
+                                     "Base":  null,
+                                     "Previous":  0,
+                                     "Current":  0,
+                                     "Change":  0,
+                                     "Growth":  null
+                                 },
+                      "expected":  {
+                                       "Base":  null,
+                                       "Previous":  0,
+                                       "Current":  0,
+                                       "Change":  0,
+                                       "Growth":  null
+                                   }
+                  }
+              ]
+}

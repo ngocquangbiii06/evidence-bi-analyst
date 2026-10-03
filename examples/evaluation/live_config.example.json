@@ -1,0 +1,23 @@
+{
+  "config_schema_version": "m5-live-evaluation-config-v1",
+  "live_enabled": false,
+  "authorization_reference": null,
+  "provider_id": null,
+  "endpoint": null,
+  "model_id": null,
+  "model_config_version": null,
+  "credential_env_var": null,
+  "runtime_implementation_version": "0.1.0",
+  "prompt_sha256": "aea406f3c3c19eb1a16d03efadfbea7985a19d14b7cc8c4bc2c865b3c84778cb",
+  "action_schema_sha256": "e656140f2295ba68810639d1367abd3580c43e49568d7ceea16acfcf30fdeebe",
+  "evaluation_manifest_sha256": "1b69d5d301dd2e750f36ec11ce94c0e94b42f1d4ca1578021968ee1c9691994e",
+  "attempts_per_scenario": 3,
+  "max_model_calls_per_attempt": 16,
+  "max_output_tokens_per_call": 1200,
+  "max_payload_bytes": 32768,
+  "input_usd_per_million": null,
+  "output_usd_per_million": null,
+  "per_attempt_budget_usd": null,
+  "batch_budget_usd": null,
+  "output_dir": "deliverables/verification/t18_live_evaluation"
+}

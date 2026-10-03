@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "EvidenceBI"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "4af446b4-922e-4219-b7b1-a0c7c01e5648"
+  }
+}

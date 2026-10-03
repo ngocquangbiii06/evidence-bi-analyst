@@ -1,0 +1,14 @@
+{
+  "source": "Manually calculated from examples/sales.csv; not produced by analytics.py or DAX.",
+  "metric_tolerance": 0,
+  "growth_ratio_tolerance": 1e-12,
+  "cases": [
+    {"id":"overall","filter":"","expected":{"Base":1600,"Previous":1000,"Current":600,"Change":-400,"Growth":-0.4}},
+    {"id":"region_north","filter":"TREATAS({\"North\"}, 'DimRegion'[Region])","expected":{"Base":450,"Previous":300,"Current":150,"Change":-150,"Growth":-0.5}},
+    {"id":"product_a","filter":"TREATAS({\"A\"}, 'DimProduct'[Product])","expected":{"Base":650,"Previous":400,"Current":250,"Change":-150,"Growth":-0.375}},
+    {"id":"north_a","filter":"TREATAS({\"North\"}, 'DimRegion'[Region]), TREATAS({\"A\"}, 'DimProduct'[Product])","expected":{"Base":150,"Previous":100,"Current":50,"Change":-50,"Growth":-0.5}},
+    {"id":"date_january","filter":"TREATAS({\"2026-01\"}, 'DimDate'[Month])","expected":{"Base":1000,"Previous":1000,"Current":600,"Change":-400,"Growth":-0.4}},
+    {"id":"date_no_rows","filter":"TREATAS({\"2026-04\"}, 'DimDate'[Month])","expected":{"Base":null,"Previous":1000,"Current":600,"Change":-400,"Growth":-0.4}},
+    {"id":"no_region_rows","filter":"TREATAS({\"NoSuchSyntheticRegion\"}, 'DimRegion'[Region])","expected":{"Base":null,"Previous":0,"Current":0,"Change":0,"Growth":null}}
+  ]
+}

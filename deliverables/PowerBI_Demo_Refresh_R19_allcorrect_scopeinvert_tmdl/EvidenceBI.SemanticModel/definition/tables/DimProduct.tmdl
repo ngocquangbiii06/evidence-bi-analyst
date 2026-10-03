@@ -1,0 +1,26 @@
+table DimProduct
+	lineageTag: 0c15c88f-b771-40e7-9984-ff00c4c96373
+
+	column ProductKey
+		dataType: int64
+		isHidden
+		lineageTag: 59d69782-4c7c-4e21-ace3-b75c449bb6b7
+		summarizeBy: none
+		sourceColumn: ProductKey
+
+	column Product
+		dataType: string
+		lineageTag: 634157a3-230d-4bcb-8b9d-5a4c2871f910
+		summarizeBy: none
+		sourceColumn: Product
+
+	partition DimProduct = m
+		mode: import
+		source =
+				let
+				    Rows = Json.Document(Binary.FromText("W1siMSIsIkFuY2hvciJdLFsiMiIsIkdyb3d0aCJdLFsiMyIsIlN0YWJsZSJdXQ==", BinaryEncoding.Base64)),
+				    Source = Table.FromRows(Rows, {"ProductKey", "Product"}),
+				    Typed = Table.TransformColumnTypes(Source, {{"ProductKey", Int64.Type}, {"Product", type text}}, "en-US")
+				in
+				    Typed
+
