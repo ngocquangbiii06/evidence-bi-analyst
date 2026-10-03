@@ -1,7 +1,9 @@
 import hashlib
 import json
+import os
 import socket
 from datetime import timedelta
+from types import SimpleNamespace
 
 import pytest
 from conftest import EXAMPLES
@@ -9,6 +11,14 @@ from conftest import EXAMPLES
 from bi_analyst.errors import BIError
 from bi_analyst.store import RunStore, atomic_bytes, default_root, now_utc
 from bi_analyst.workflow import analyze_deterministic, ingest_run, open_engine
+
+
+@pytest.fixture
+def windows_store_os(monkeypatch):
+    # Simulate Windows only for the store; pathlib must keep the host OS semantics.
+    simulated_os = SimpleNamespace(**vars(os))
+    simulated_os.name = "nt"
+    monkeypatch.setattr("bi_analyst.store.os", simulated_os)
 
 
 def test_default_root_prefers_configured_path_without_evaluating_uid(tmp_path, monkeypatch):
@@ -163,14 +173,12 @@ def test_atomic_write_failure_preserves_previous(tmp_path, monkeypatch):
 
 @pytest.mark.parametrize("winerror", [None, 5, 32, 33])
 def test_atomic_write_retries_known_windows_replace_transients(
-    tmp_path, monkeypatch, winerror
+    tmp_path, monkeypatch, winerror, windows_store_os
 ):
     path = tmp_path / "artifact.json"
     path.write_text('{"old":true}')
     original_replace = __import__("os").replace
     calls = []
-
-    monkeypatch.setattr("bi_analyst.store.os.name", "nt")
 
     def flaky_replace(source, target):
         calls.append((source, target))
@@ -190,7 +198,7 @@ def test_atomic_write_retries_known_windows_replace_transients(
 
 
 def test_atomic_write_retries_transient_replace_twice_then_succeeds(
-    tmp_path, monkeypatch
+    tmp_path, monkeypatch, windows_store_os
 ):
     path = tmp_path / "artifact.json"
     path.write_text('{"old":true}')
@@ -198,7 +206,6 @@ def test_atomic_write_retries_transient_replace_twice_then_succeeds(
     calls = []
     waits = []
 
-    monkeypatch.setattr("bi_analyst.store.os.name", "nt")
     monkeypatch.setattr("bi_analyst.store.time.sleep", waits.append)
 
     def flaky_replace(source, target):
@@ -219,13 +226,11 @@ def test_atomic_write_retries_transient_replace_twice_then_succeeds(
 
 
 def test_atomic_write_retries_are_bounded_and_safe_after_transient_exhaustion(
-    tmp_path, monkeypatch
+    tmp_path, monkeypatch, windows_store_os
 ):
     path = tmp_path / "artifact.json"
     path.write_text('{"old":true}')
     calls = []
-
-    monkeypatch.setattr("bi_analyst.store.os.name", "nt")
 
     def always_busy(*args):
         calls.append(args)
@@ -243,12 +248,12 @@ def test_atomic_write_retries_are_bounded_and_safe_after_transient_exhaustion(
     assert not list(tmp_path.glob(".partial-*"))
 
 
-def test_atomic_write_does_not_retry_arbitrary_windows_oserror(tmp_path, monkeypatch):
+def test_atomic_write_does_not_retry_arbitrary_windows_oserror(
+    tmp_path, monkeypatch, windows_store_os
+):
     path = tmp_path / "artifact.json"
     path.write_text('{"old":true}')
     calls = []
-
-    monkeypatch.setattr("bi_analyst.store.os.name", "nt")
 
     def permanent_failure(*args):
         calls.append(args)
